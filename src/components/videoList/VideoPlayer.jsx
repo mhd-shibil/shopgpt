@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-const YoutubeVideoPlayer = ({ videoLink }) => {
+const YoutubeVideoPlayer = ({ videoLink, startsAt = 0, autoPlay }) => {
   const [youtubeId, setYoutubeId] = useState("");
 
   useEffect(() => {
-    if (videoLink.split("watch?v=").length > 1)
-      setYoutubeId(videoLink.split("watch?v=")[1]);
+    if (videoLink?.split("watch?v=").length > 1)
+      setYoutubeId(videoLink?.split("watch?v=")[1]);
   }, [videoLink]);
 
   return (
@@ -14,7 +14,9 @@ const YoutubeVideoPlayer = ({ videoLink }) => {
         <iframe
           width="960"
           height="540"
-          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&start=60&mute=0`}
+          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=${
+            autoPlay ? "1" : "0"
+          }&start=${startsAt}&mute=0`}
           className="rounded-lg"
           title="YouTube video player"
         />

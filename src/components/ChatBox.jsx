@@ -11,6 +11,7 @@ import VoiceRecorder from "../components/voice/voiceRecorder";
 import Loader from "../components/loader/Loader";
 import FollowUp from "./follow-up/FollowUp";
 import { respData } from "../constants/responseData";
+import { iphoneVideoData } from "../constants/videoData";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
@@ -19,6 +20,19 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [lastMessage, setLastMessage] = useState("");
 
   const getData = async (text) => {
+    if (text.includes("video")) {
+      let videoList = [];
+      if (text.includes("iphone")) {
+        videoList = iphoneVideoData;
+      }
+      console.log("videoList", videoList);
+      setMessageList((curr) => [
+        ...curr,
+        { request: text, response: { videos: videoList }, id: uuidv4() },
+      ]);
+      return;
+    }
+
     setIsLoading(true);
     const url = `http://192.168.5.38:3000/api/v1/shopGPT?input=${encodeURIComponent(
       text
@@ -116,8 +130,8 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           }
         )}
       >
-        {messageList?.map((message) => (
-          <div key={message.id}>
+        {messageList?.map((message, index) => (
+          <div key={message.id} className="mb-4">
             {message?.request && (
               <div className="bg-[#F5F5F5] py-1 px-6 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto font-bold text-base">
                 {message?.request}
@@ -129,7 +143,12 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
                   {message?.response?.text}
                 </div>
               )}
-              {message?.response?.videos && <VideoList />}
+              {message?.response?.videos && (
+                <VideoList
+                  videos={message?.response?.videos}
+                  autoPlay={index + 1 === messageList.length}
+                />
+              )}
               {message?.response?.products && (
                 <List
                   cards={message?.response?.products}
