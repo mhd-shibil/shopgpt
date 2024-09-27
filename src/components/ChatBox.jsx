@@ -6,6 +6,7 @@ import { IconButton } from '@mui/material';
 import { Close } from '@mui/icons-material';
 import { List } from './list/List';
 import { cardsArray } from '../constants/dummy-data';
+import { motion } from 'framer-motion';
 
 export const ChatBox = () => {
   const [text,setText]=useState('')
@@ -24,13 +25,14 @@ export const ChatBox = () => {
         position: 'absolute',
         right: '20px',
         top: '20px',
+        zIndex: 10,
       }} onClick={() => toggleFocus(false)}>
         <Close/>
       </IconButton>}
 
       <div
-        className={classNames('transition-all h-0 w-full duration-500 flex-grow overflow-hidden', {
-          'h-[70vh]': isFocused
+        className={classNames('transition-all h-0 w-full duration-500 flex-grow overflow-auto', {
+          'h-[80vh]': isFocused
         })}
       >
         <List cards={cardsArray}/>
@@ -48,7 +50,17 @@ export const ChatBox = () => {
           className="w-full h-full ml-4 outline-none"
         />
         <button>
+          <motion.div
+  whileHover={{ scale: 1.2, rotate: 360 }}
+  whileTap={{
+    scale: 0.8,
+    rotate: -90,
+    borderRadius: "100%"
+  }}
+>
+
         <SendIcon />
+        </motion.div>
         </button>
       </div>
     </div>
