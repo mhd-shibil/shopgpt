@@ -9,9 +9,8 @@ import { cardsArray } from "../constants/dummy-data";
 import { motion } from "framer-motion";
 import VideoList from "./videoList/VideoList";
 
-export const ChatBox = () => {
+export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
-  const [isFocused, toggleFocus] = useState(false);
 
   return (
     <div
@@ -30,7 +29,7 @@ export const ChatBox = () => {
             top: "20px",
             zIndex: 10,
           }}
-          onClick={() => toggleFocus(false)}
+          onClick={() => setIsFocused(false)}
         >
           <Close />
         </IconButton>
@@ -53,7 +52,7 @@ export const ChatBox = () => {
           <AttatchmentIcon />
         </div>
         <input
-          onFocus={() => toggleFocus(true)}
+          onFocus={() => setIsFocused(true)}
           onChange={(e) => setText(e.target.value)}
           value={text}
           placeholder="Start typing here..."
