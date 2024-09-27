@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <TopBar />
       <div
-        className={`h-[calc(100vh-200px)] mt-[200px] overflow-auto px-[32px] no-scrollbar pb-16 ${
+        className={`h-[calc(100vh-120px)] mt-[120px] overflow-auto px-[32px] no-scrollbar pb-16 ${
           isFocused ? "opacity-50 blur-sm" : ""
         }`}
       >

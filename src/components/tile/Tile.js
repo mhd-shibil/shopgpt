@@ -18,14 +18,14 @@ const Tile = ({ data, isAnyTileHovered, setIsAnyTileHovered }) => {
       animate={
         !isAnyTileHovered
           ? {
-              y: [0, -500, 0], // Animation when no tile is hovered
+              y: [0, -40, 0], // Animation when no tile is hovered
             }
           : {
               y: 0, // Stop animation for all tiles when any one is hovered
             }
       }
       transition={{
-        duration: 20, // Duration of one full cycle of animation
+        duration: 10, // Duration of one full cycle of animation
         repeat: isAnyTileHovered ? 0 : Infinity, // Stop repeating when any tile is hovered
         repeatType: "mirror", // Animation reverses direction each cycle
       }}
@@ -46,21 +46,19 @@ const Tile = ({ data, isAnyTileHovered, setIsAnyTileHovered }) => {
           src={data.productImg}
           alt="product"
           className={`w-full h-full object-cover rounded-lg transition-opacity duration-300 object-top ${
-            isHovered ? "opacity-50 blur-sm" : "opacity-100"
+            isHovered ? "opacity-40 blur-sm" : "opacity-100"
           }`}
         />
       )}
 
       {isHovered && (
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black bg-opacity-10 p-4 rounded-lg">
+        <div
+          className="cursor-pointer absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black bg-opacity-10 p-4 rounded-lg"
+          onClick={() => window.open(data.link, "_blank")}
+        >
           <h3 className="text-lg font-bold text-black">{data.name}</h3>
           <p className="text-sm my-2 text-black">${data.price}</p>
-          <img
-            src={arrow}
-            onClick={() => window.open(data.link, "_blank")}
-            alt="link"
-            className="cursor-pointer"
-          />
+          <img src={arrow} alt="link" />
         </div>
       )}
     </motion.div>
