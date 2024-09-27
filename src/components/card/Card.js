@@ -1,10 +1,20 @@
 import React from "react";
 
-const Card = ({ details }) => {
-  const { name, price, siteName, productImg, siteImg, link } = details;
+const Card = ({ details, handleTry }) => {
+  const {
+    name,
+    price,
+    siteName,
+    productImg,
+    siteImg,
+    link,
+    isTryOn = true,
+  } = details;
   return (
     <div
-      className="card bg-[#F9F6FB] rounded-lg border-[1px] shadow-md border-black max-h-[300px] min-h-[300px] flex flex-col justify-between items-center"
+      className={`card bg-[#F9F6FB] rounded-lg border-[1px] shadow-md border-black flex flex-col justify-between items-center ${
+        isTryOn ? "max-h-[340px] min-h-[340px]" : "max-h-[300px] min-h-[300px]"
+      }`}
       style={styles.card}
     >
       <div className="flex items-center flex-col">
@@ -28,6 +38,14 @@ const Card = ({ details }) => {
           <p style={styles.siteName}>{siteName}</p>
         </a>
       </div>
+      {isTryOn && (
+        <button
+          onClick={handleTry}
+          className="rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-4 py-2 font-normal text-sm"
+        >
+          Try On
+        </button>
+      )}
     </div>
   );
 };

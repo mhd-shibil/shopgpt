@@ -10,19 +10,25 @@ import VideoList from "./videoList/VideoList";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
-  const [messageList,setMessageList]= useState([]);
+  const [messageList, setMessageList] = useState([]);
 
+  const onSubmit = (e) => {
+    if (e.key === "Enter") {
+      setMessageList((curr) => [
+        ...curr,
+        {
+          request: e.target.value,
+          response: { text: e.target.value + "Response" },
+        },
+      ]);
+      setText("");
+      setIsFocused(true);
+    }
+  };
 
-  const onSubmit = (e)=>{
-    if(e.key==='Enter') {
-      setMessageList(curr=>[...curr,{
-        request: e.target.value,
-        response:{text: e.target.value + 'Response'}
-      }])
-      setText('')
-      setIsFocused(true)
-    }
-    }
+  const handleTry = () => {
+    console.log(123);
+  };
 
   return (
     <div
@@ -47,23 +53,32 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
         </IconButton>
       )}
 
-<div
-className={classNames(
-  "transition-all h-0 w-full duration-500 flex-grow overflow-auto flex flex-col gap-4",
-  {
-    "h-[80vh]": isFocused,
-  }
-)}
->
-
-      {messageList?.map(message=>(
-        <div>
-        {message?.request&&<div className="bg-white p-2 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto">{message?.request}</div>}
-        {message?.response?.text&&<div className="bg-yellow-200 p-2 rounded-[30px] flex items-center border border-border w-fit">{message?.response?.text}</div>}
-        {message?.VideoList&&<VideoList />}
-        {message?.productList&&<List cards={cardsArray} />}
-        </div>
-      ))}
+      <div
+        className={classNames(
+          "transition-all h-0 w-full duration-500 flex-grow overflow-auto flex flex-col gap-4",
+          {
+            "h-[80vh]": isFocused,
+          }
+        )}
+      >
+        {messageList?.map((message) => (
+          <div>
+            {message?.request && (
+              <div className="bg-white p-2 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto">
+                {message?.request}
+              </div>
+            )}
+            {message?.response?.text && (
+              <div className="bg-yellow-200 p-2 rounded-[30px] flex items-center border border-border w-fit">
+                {message?.response?.text}
+              </div>
+            )}
+            {message?.VideoList && <VideoList />}
+            {message?.productList && (
+              <List cards={cardsArray} handleTry={handleTry} />
+            )}
+          </div>
+        ))}
       </div>
 
       <div className="bg-white p-2 w-full rounded-[30px] flex items-center border border-border">
@@ -80,8 +95,8 @@ className={classNames(
         <button
           onClick={onSubmit}
           className="hover:scale-110 transition-transform"
-          >
-            <SendIcon />
+        >
+          <SendIcon />
         </button>
       </div>
     </div>
