@@ -38,8 +38,6 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
     }
   };
 
-  console.log({ messageList: messageList[0].response });
-
   const onSubmit = (e) => {
     if (e.key === "Enter") {
       getData(e.target.value);
