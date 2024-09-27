@@ -12,8 +12,8 @@ const YoutubeVideoPlayer = ({ videoLink }) => {
     <div className="flex flex-col items-center justify-start w-full">
       {youtubeId ? (
         <iframe
-          width="1280"
-          height="720"
+          width="960"
+          height="540"
           src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&start=60&mute=0`}
           className="rounded-lg"
           title="YouTube video player"

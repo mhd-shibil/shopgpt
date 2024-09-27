@@ -7,7 +7,7 @@ const VideoThumbnail = ({ videoLink = "" }) => {
     return `https://img.youtube.com/vi/${youtubeId}/sddefault.jpg`;
   };
   return (
-    <div>
+    <div className="cursor-pointer">
       <img
         src={getThumbanilUrl()}
         alt="thumbnail"
