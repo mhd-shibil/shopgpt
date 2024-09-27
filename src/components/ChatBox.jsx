@@ -7,7 +7,7 @@ import { Close } from "@mui/icons-material";
 import { List } from "./list/List";
 import { cardsArray } from "../constants/dummy-data";
 import { motion } from "framer-motion";
-// import VideoList from "./videoList/VideoList";
+import VideoList from "./videoList/VideoList";
 
 export const ChatBox = () => {
   const [text, setText] = useState("");
@@ -44,8 +44,8 @@ export const ChatBox = () => {
           }
         )}
       >
-        <List cards={cardsArray} />
-        {/* {isFocused && <VideoList />} */}
+        {/* <List cards={cardsArray} /> */}
+        {isFocused && <VideoList />}
       </div>
 
       <div className="bg-white p-2 w-full rounded-[30px] flex items-center border border-border">
