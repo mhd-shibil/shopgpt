@@ -79,14 +79,16 @@ export const cardsArray = [
   },
   {
     key: "8",
-    name: "Product 234231",
+    name: "The Zwart Black Slider Ring",
     price: "29.99",
     siteName: "Amazon",
     productImg:
       "https://www.att.com/scmsassets/upper_funnel/wireless/3397534-multi-tile-iphone16promax-retina.png",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
-    link: "https://www.amazon.com",
+    link: "https://www.bluestone.com/adjustable+rings/the-zwart-black-slider-ring~88685.html",
+    videoLink: "https://kinvid1.bluestone.com/output/mp4/1_v0.mp4/1_v0.mp4",
+    type: "video"
   },
   {
     key: "9",
