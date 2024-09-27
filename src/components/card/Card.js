@@ -10,7 +10,7 @@ const Card = ({ details, handleTry }) => {
     siteImg,
     url,
     discount = "50",
-    isTryOn = true,
+    isTryOn = false,
   } = details;
   console.log({ card: details });
 
