@@ -28,9 +28,9 @@ export const List = ({ cards, handleTry }) => (
     initial="hidden"
     animate="visible"
   >
-    <div className="flex gap-6 flex-wrap">
+    <div className="grid md:grid-cols-5 gap-6">
       {cards.map((card, index) => (
-        <motion.li key={index} className="item w-[calc(25%-18px)]" variants={item}>
+        <motion.li key={index} className="" variants={item}>
           <Card details={card} handleTry={handleTry} />
         </motion.li>
       ))}

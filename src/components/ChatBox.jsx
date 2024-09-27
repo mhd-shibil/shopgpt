@@ -15,14 +15,23 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [messageList, setMessageList] = useState([]);
 
   const getData = async (text) => {
-    const url = `http://192.168.5.38:3000/api/v1/shopGPT?input=${encodeURIComponent(
+    const url = `https://9128-103-138-236-18.ngrok-free.app/api/v1/shopGPT?input=${encodeURIComponent(
       text
     )}`;
     try {
-      const resp = { ok: true, respData };
+      const resp = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      // const resp = { ok: true, respData };
+
+      console.log({ resp });
 
       if (resp.ok) {
-        const data = respData;
+        const data = await resp.json();
+        // const data = respData;
         setMessageList((curr) => [
           ...curr,
           { request: text, response: data, id: uuidv4() },
@@ -91,10 +100,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
         )}
       >
         {messageList?.map((message, index) => (
-          <div
-            key={message.id}
-            id={message.id}
-          >
+          <div key={message.id} id={message.id}>
             {message?.request && (
               <div className="bg-[#DCD3E9] py-1 px-[20px] rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto text-[14px] font-bold">
                 {message?.request}
