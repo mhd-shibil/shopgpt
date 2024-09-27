@@ -1,11 +1,11 @@
 export const cardsArray = [
   {
     key: "1",
-    name: "Product 1",
-    price: "29.99",
-    siteName: "Nyka",
+    name: "The Majesta Watch Band",
+    price: "₹1,23,953",
+    siteName: "Bluestone",
     productImg:
-      "https://photographylife.com/cdn-cgi/imagedelivery/GrQZt6ZFhE4jsKqjDEtqRA/photographylife.com/2019/08/iPhone-X.jpg/w=650,h=488",
+      "https://kinclimg5.bluestone.com/f_webp/static/hp/d/e19_v2.jpg",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
@@ -35,7 +35,7 @@ export const cardsArray = [
   },
   {
     key: "4",
-    name: "Product 1",
+    name: "Product 1232",
     price: "29.99",
     siteName: "Amazon",
     productImg:
@@ -46,7 +46,7 @@ export const cardsArray = [
   },
   {
     key: "5",
-    name: "Product 1",
+    name: "Product 23331",
     price: "29.99",
     siteName: "Nyka",
     productImg:
@@ -57,29 +57,29 @@ export const cardsArray = [
   },
   {
     key: "6",
-    name: "Product 1",
+    name: "Product fgf1",
     price: "29.99",
     siteName: "Amazon",
     productImg:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDseo3g87gB4pIquHR1nO9cxMNNi_cqjSrA&s",
+      "https://kinclimg5.bluestone.com/f_webp/static/hp/d/e8_v2.jpg",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
-    link: "https://www.amazon.com",
+    link: "https://www.bluestone.com/watch+accessory/the-majesta-watch-band~81007.html",
   },
   {
     key: "7",
-    name: "Producdfsfdsfdsf dsfdsfds fdsfsdfsfdsfsfdsfdst 1",
-    price: "29.99",
-    siteName: "Flipkart",
+    name: "Retro Digital Light Grey",
+    price: "₹13,299",
+    siteName: "Daniel Willington",
     productImg:
-      "https://www.aptronixindia.com/media/catalog/product/cache/31f0162e6f7d821d2237f39577122a8a/i/p/iphone_15_pro_natural_titanium_pdp_image_position-1__wwen-removebg-preview_1.png",
+      "https://in.danielwellington.com/cdn/shop/files/ocect2ehddwy6gjzxnh4.jpg?v=1725007360&width=540",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
-    link: "https://www.amazon.com",
+    link: "https://in.danielwellington.com/products/retro-digital-light-grey",
   },
   {
     key: "8",
-    name: "Product 1",
+    name: "Product 234231",
     price: "29.99",
     siteName: "Amazon",
     productImg:
@@ -90,7 +90,7 @@ export const cardsArray = [
   },
   {
     key: "9",
-    name: "Product 1",
+    name: "Product 1kldkd",
     price: "29.99",
     siteName: "Nyka",
     productImg:
@@ -101,7 +101,7 @@ export const cardsArray = [
   },
   {
     key: "10",
-    name: "Product 1",
+    name: "Product 1vvvccc",
     price: "29.99",
     siteName: "Amazon",
     productImg:
@@ -112,7 +112,7 @@ export const cardsArray = [
   },
   {
     key: "111",
-    name: "Product 1",
+    name: "Product dfdfd1",
     price: "29.99",
     siteName: "Nyka",
     productImg:
@@ -123,7 +123,7 @@ export const cardsArray = [
   },
   {
     key: "112",
-    name: "Product 1",
+    name: "Product mkvmv1",
     price: "29.99",
     siteName: "Amazon",
     productImg:
@@ -134,7 +134,7 @@ export const cardsArray = [
   },
   {
     key: "113",
-    name: "Producdfsfdsfdsf dsfdsfds fdsfsdfsfdsfsfdsfdst 1",
+    name: "Pr34344fdfdf1",
     price: "29.99",
     siteName: "Flipkart",
     productImg:
@@ -145,7 +145,7 @@ export const cardsArray = [
   },
   {
     key: "114",
-    name: "Product 1",
+    name: "Product 3444fvcv1",
     price: "29.99",
     siteName: "Amazon",
     productImg:
@@ -156,7 +156,7 @@ export const cardsArray = [
   },
   {
     key: "115",
-    name: "Product 1",
+    name: "Product sdsd231",
     price: "29.99",
     siteName: "Nyka",
     productImg:
@@ -167,7 +167,7 @@ export const cardsArray = [
   },
   {
     key: "116",
-    name: "Product 1",
+    name: "Product vd3gg1",
     price: "29.99",
     siteName: "Amazon",
     productImg:
@@ -178,7 +178,7 @@ export const cardsArray = [
   },
   {
     key: "117",
-    name: "Producdfsfdsfdsf dsfdsfds fdsfsdfsfdsfsfdsfdst 1",
+    name: "Prod33333t 1",
     price: "29.99",
     siteName: "Flipkart",
     productImg:
@@ -243,7 +243,7 @@ export const cardsArray = [
   },
   {
     key: "113",
-    name: "Producdfsfdsfdsf dsfdsfds fdsfsdfsfdsfsfdsfdst 1",
+    name: "Producdf3fffd1",
     price: "29.99",
     siteName: "Flipkart",
     productImg:
