@@ -56,10 +56,19 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
       if (resp.ok) {
         const data = await resp.json();
         // const data = respData;
+        if(!data?.text&&!data?.products?.length&&!data?.videos?.length){
+
+        setMessageList((curr) => [
+          ...curr,
+          { request: text, response: {
+            text: "Sorry, I am not able to fetch the data right now. Please try again later.",
+          }, id: uuidv4() },
+        ]);
+      }else{
         setMessageList((curr) => [
           ...curr,
           { request: text, response: data, id: uuidv4() },
-        ]);
+        ]);}
       } else {
         setMessageList((curr) => [
           ...curr,
