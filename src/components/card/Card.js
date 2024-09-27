@@ -15,19 +15,33 @@ const Card = ({ details, handleTry }) => {
 
   return (
     <div
-      className={`card bg-[#F9F6FB] rounded-lg border-[1px] shadow-md border-black flex flex-col justify-between items-center ${
-        isTryOn ? "max-h-[340px] min-h-[340px]" : "max-h-[300px] min-h-[300px]"
+      className={`card bg-[#F9F6FB] rounded-lg border-[1px] shadow-md border-black flex flex-col justify-between items-center pb-4 ${
+        isTryOn ? "h-full min-h-[340px]" : "h-full min-h-[300px]"
       }`}
       style={styles.card}
     >
-      <div className="flex items-center flex-col">
+      <div className="flex items-start text-start flex-col w-full">
         <img
           src={imgUrl}
           alt="product"
-          className="flex justify-center items-center mb-4 w-full h-[150px] object-cover rounded-lg"
+          className="flex justify-center items-center mb-4 w-full h-[180px] object-cover object-top rounded-lg"
         />
-        <h2 style={styles.name}>{title}</h2>
-        <p style={styles.price}>Price: {price}</p>
+        <div className="text-[#303030] font-medium text-sm mx-2">{title}</div>
+        <div className="text-[#303030] font-bold text-sm mx-2 mt-1">
+          {price}
+        </div>
+      </div>
+
+      <div className="w-full items-center justify-center">
+        <ShopIcon shopLink={url} style={styles.siteLink} shopName={store} />
+        {isTryOn && (
+          <button
+            onClick={handleTry}
+            className="rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-4 py-1 font-normal text-sm"
+          >
+            Try On
+          </button>
+        )}
       </div>
 
       {/* Discount Tag */}
@@ -38,15 +52,6 @@ const Card = ({ details, handleTry }) => {
       >
         {discount}% OFF
       </div>
-      <ShopIcon shopLink={url} style={styles.siteLink} shopName={store} />
-      {isTryOn && (
-        <button
-          onClick={handleTry}
-          className="rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-4 py-1 font-normal text-sm"
-        >
-          Try On
-        </button>
-      )}
     </div>
   );
 };
@@ -55,7 +60,6 @@ const styles = {
   card: {
     border: "1px solid #ddd",
     borderRadius: "8px",
-    padding: "16px",
     margin: "8px",
     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
     textAlign: "center",
@@ -73,13 +77,11 @@ const styles = {
     color: "#333",
   },
   siteLink: {
-    bottom: "16px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     color: "#1e90ff",
     textDecoration: "none",
-    marginTop: "8px",
   },
   siteImg: {
     width: "24px",

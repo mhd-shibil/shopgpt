@@ -147,7 +147,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
       </div>
 
       <div className="bg-white p-2 w-full rounded-[30px] flex items-center border border-border">
-        <div className="p-1 bg-accent rounded-full size-11">
+        <div className="p-1 bg-[#5548C7] rounded-full size-11">
           <AttatchmentIcon />
         </div>
         <input
@@ -157,7 +157,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           }}
           value={text}
           placeholder="Start typing here..."
-          className="w-full h-full ml-4 outline-none"
+          className="w-full h-full ml-4 outline-none text-lg"
         />
         <VoiceRecorder
           setText={(text) => {

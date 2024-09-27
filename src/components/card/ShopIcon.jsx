@@ -9,13 +9,19 @@ const ShopIcon = ({ shopLink, shopName, style }) => {
     return <DefaultIcon />;
   };
 
+  const getShopName = () => {
+    if (shopName === "Amazon.in") return "Amazon";
+    if (shopName === "Croma") return "Croma";
+    return "";
+  };
+
   const getStyle = () => {
     if (shopName === "Croma") return "w-20 h-8";
     return "size-8";
   };
 
   return (
-    <div className="mb-1">
+    <div className="mb-1 ml-2 flex gap-2 items-center">
       <a
         href={shopLink}
         style={style}
@@ -25,6 +31,7 @@ const ShopIcon = ({ shopLink, shopName, style }) => {
       >
         {getShopIcon()}
       </a>
+      <div className="text-sm font-semibold">{getShopName()}</div>
     </div>
   );
 };
