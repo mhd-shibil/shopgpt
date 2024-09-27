@@ -10,7 +10,7 @@ import VideoList from "./videoList/VideoList";
 import VoiceRecorder from "../components/voice/voiceRecorder";
 import Loader from "../components/loader/Loader";
 import FollowUp from "./follow-up/FollowUp";
-// import { respData } from "../constants/responseData";
+import { respData } from "../constants/responseData";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
@@ -24,17 +24,17 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
       text
     )}`;
     try {
-      const resp = await fetch(url, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      // const resp = { ok: true, respData };
+      // const resp = await fetch(url, {
+      //   method: "GET",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+      const resp = { ok: true, respData };
 
       if (resp.ok) {
-        const data = await resp.json();
-        // const data = respData;
+        // const data = await resp.json();
+        const data = respData;
         setMessageList((curr) => [
           ...curr,
           { request: text, response: data, id: uuidv4() },
@@ -160,7 +160,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
       </div>
 
       <div className="bg-white p-2 w-full rounded-[30px] flex items-center border border-border">
-        <div className="p-1 bg-accent rounded-full size-11">
+        <div className="p-1 bg-[#5548C7] rounded-full size-11">
           <AttatchmentIcon />
         </div>
         <input
@@ -170,7 +170,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           }}
           value={text}
           placeholder="Start typing here..."
-          className="w-full h-full ml-4 outline-none"
+          className="w-full h-full ml-4 outline-none text-lg"
         />
         <VoiceRecorder
           setText={(text) => {
