@@ -38,7 +38,7 @@ const VideoList = () => {
   return (
     <div className="h-full w-full overflow-y-scroll no-scrollbar">
       <div
-        className="w-full h-full flex items-center justify-center"
+        className="h-[calc(100%-100px)] w-full flex items-center justify-center"
         ref={videoSectionRef}
       >
         <VideoPlayer videoLink={activeVideo.url} />
