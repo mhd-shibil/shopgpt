@@ -140,7 +140,12 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           </div>
         ))}
         {messageList.length >= 1 && !isLoading && (
-          <FollowUp onClick={handleFollowUpClick} />
+          <FollowUp
+            onClick={handleFollowUpClick}
+            questions={
+              messageList[messageList.length - 1].response?.followUpQns
+            }
+          />
         )}
         {isLoading && (
           <div id="loader">
