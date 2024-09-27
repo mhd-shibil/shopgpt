@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ReactComponent as AttatchmentIcon } from "../assets/attachment.svg";
 import { ReactComponent as SendIcon } from "../assets/send.svg";
+import { ReactComponent as ResponseIcon } from "../assets/response.svg";
 import classNames from "classnames";
 import { IconButton } from "@mui/material";
 import { Close } from "@mui/icons-material";
@@ -17,32 +18,51 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [messageList, setMessageList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [lastMessage, setLastMessage] = useState("");
+  const [userId,setUserId] = useState("");
 
   const getData = async (text) => {
+    let currentUserId = userId
+    if(!currentUserId){
+      currentUserId=uuidv4();
+      setUserId(currentUserId);
+    }
     setIsLoading(true);
     const url = `http://192.168.5.38:3000/api/v1/shopGPT?input=${encodeURIComponent(
       text
-    )}`;
+    )}&userId=${currentUserId}`;
     try {
-      // const resp = await fetch(url, {
-      //   method: "GET",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      // });
-      const resp = { ok: true, respData };
+      const resp = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      // const resp = { ok: true, respData };
 
       if (resp.ok) {
-        // const data = await resp.json();
-        const data = respData;
+        const data = await resp.json();
+        // const data = respData;
         setMessageList((curr) => [
           ...curr,
           { request: text, response: data, id: uuidv4() },
         ]);
       } else {
+        setMessageList((curr) => [
+          ...curr,
+          { request: text, response: {
+            text: "Sorry, I am not able to fetch the data right now. Please try again later.",
+          }, id: uuidv4() },
+        ]);
         console.error(`Error: ${resp.status} ${resp.statusText}`);
       }
     } catch (error) {
+
+      setMessageList((curr) => [
+        ...curr,
+        { request: text, response: {
+          text: "Sorry, I am not able to fetch the data right now. Please try again later.",
+        }, id: uuidv4() },
+      ]);
       console.error("Fetch error:", error);
     }
     setIsLoading(false);
@@ -102,7 +122,9 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
             top: "5px",
             zIndex: 10,
           }}
-          onClick={() => setIsFocused(false)}
+          onClick={() => {
+            setUserId('');
+            setIsFocused(false)}}
         >
           <Close />
         </IconButton>
@@ -123,9 +145,13 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
                 {message?.request}
               </div>
             )}
-            <div id={message.id}>
+            <div className="flex" id={message.id}>
+              <div className="bg-gradient-to-br from-[#C167F6] to-[#5548C7] size-11 flex items-center justify-center rounded-md mr-10">
+                <ResponseIcon/>
+              </div>
+              <div>
               {message?.response?.text && (
-                <div className="bg-yellow-200 p-2 rounded-[30px] flex items-center border border-border w-fit">
+                <div className="p-2 rounded-[30px] flex items-center w-fit  font-bold">
                   {message?.response?.text}
                 </div>
               )}
@@ -136,6 +162,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
                   handleTry={handleTry}
                 />
               )}
+              </div>
             </div>
           </div>
         ))}
