@@ -9,6 +9,7 @@ import { List } from "./list/List";
 import VideoList from "./videoList/VideoList";
 import VoiceRecorder from "../components/voice/voiceRecorder";
 import Loader from "../components/loader/Loader";
+// import { respData } from "../constants/responseData";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
@@ -30,7 +31,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
       });
       // const resp = { ok: true, respData };
 
-      console.log({ resp });
+      // console.log({ resp });
 
       if (resp.ok) {
         const data = await resp.json();
@@ -106,9 +107,9 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
 
       <div
         className={classNames(
-          "transition-all h-0 w-full duration-500 flex-grow overflow-auto flex flex-col gap-4",
+          "transition-all h-0 w-full duration-500 flex-grow overflow-auto flex flex-col gap-4 mt-8 px-4",
           {
-            "h-[80vh]": isFocused,
+            "h-[75vh]": isFocused,
           }
         )}
       >
