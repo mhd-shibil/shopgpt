@@ -12,6 +12,13 @@ export const ChatBox = () => {
   const [text,setText]=useState('')
   const [isFocused, toggleFocus] = useState(false);
 
+  const onSubmit = (e)=>{
+    if(e.key==='Enter') {
+      setText('')
+      toggleFocus(true)
+    }
+    }
+
   return (
     <div
       className={classNames(
@@ -43,13 +50,14 @@ export const ChatBox = () => {
           <AttatchmentIcon />
         </div>
         <input
-          onFocus={() => toggleFocus(true)}
           onChange={(e)=>setText(e.target.value)}
+          onKeyDown={onSubmit}
           value={text}
           placeholder="Start typing here..."
           className="w-full h-full ml-4 outline-none"
         />
-        <button>
+        <button
+          onClick={onSubmit}>
           <motion.div
   whileHover={{ scale: 1.2, rotate: 360 }}
   whileTap={{
