@@ -9,9 +9,11 @@ const Card = ({ details, handleTry }) => {
     imgUrl,
     siteImg,
     url,
+    discount = "50",
     isTryOn = true,
   } = details;
   console.log({ card: details });
+
   return (
     <div
       className={`card bg-[#F9F6FB] rounded-lg border-[1px] shadow-md border-black flex flex-col justify-between items-center ${
@@ -27,6 +29,15 @@ const Card = ({ details, handleTry }) => {
         />
         <h2 style={styles.name}>{title}</h2>
         <p style={styles.price}>Price: ${price}</p>
+      </div>
+
+      {/* Discount Tag */}
+      <div
+        className={`absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded ${
+          discount ? "" : "hidden"
+        }`}
+      >
+        {discount}% OFF
       </div>
 
       <div>
@@ -60,6 +71,7 @@ const styles = {
     margin: "8px",
     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
     textAlign: "center",
+    position: "relative", // Needed for absolute positioning of the discount tag
   },
   name: {
     margin: "0 0 8px",
