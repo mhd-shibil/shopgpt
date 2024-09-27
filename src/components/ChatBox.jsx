@@ -13,7 +13,6 @@ import VoiceRecorder from "../components/voice/voiceRecorder";
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
   const [messageList, setMessageList] = useState([]);
-  const messageEndRef = useRef(null);
 
   const getData = async (text) => {
     const url = `http://192.168.5.38:3000/api/v1/shopGPT?input=${encodeURIComponent(
@@ -50,12 +49,13 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
 
   useEffect(() => {
     if (messageList.length > 1) {
-      // Only scroll if there's more than one message
-      messageEndRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "end",
-        inline: "nearest",
-      });
+      document
+        .getElementById(messageList[messageList.length - 1].id)
+        .scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
     }
   }, [messageList]);
 
@@ -90,8 +90,11 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           }
         )}
       >
-        {messageList?.map((message) => (
-          <div key={message.id}>
+        {messageList?.map((message, index) => (
+          <div
+            key={message.id}
+            id={message.id}
+          >
             {message?.request && (
               <div className="bg-[#DCD3E9] py-1 px-[20px] rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto text-[14px] font-bold">
                 {message?.request}
@@ -108,8 +111,6 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
             )}
           </div>
         ))}
-        {/* This is the div to scroll to */}
-        <div ref={messageEndRef} />
       </div>
 
       <div className="bg-white p-2 w-full rounded-[30px] flex items-center border border-border">
