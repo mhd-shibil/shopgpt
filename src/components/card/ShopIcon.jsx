@@ -1,18 +1,19 @@
-import { ReactComponent as DefaultIcon } from "../../assets/shopIcons/common.svg";
+// import { ReactComponent as DefaultIcon } from "../../assets/shopIcons/common.svg";
 import { ReactComponent as AmazonIcon } from "../../assets/shopIcons/amazon.svg";
 import { ReactComponent as CromaIcon } from "../../assets/shopIcons/croma.svg";
+import { ReactComponent as FlipkartIcon } from "../../assets/shopIcons/flipkart.svg";
 
 const ShopIcon = ({ shopLink, shopName, style }) => {
   const getShopIcon = () => {
     if (shopName === "Amazon.in") return <AmazonIcon />;
-    if (shopName === "Croma") return <CromaIcon className="" />;
-    return <DefaultIcon />;
+    if (shopName === "Croma") return <CromaIcon />;
+    if (shopName === "Flipkart") return <FlipkartIcon />;
+    return null;
   };
 
   const getShopName = () => {
     if (shopName === "Amazon.in") return "Amazon";
-    if (shopName === "Croma") return "Croma";
-    return "";
+    return shopName;
   };
 
   const getStyle = () => {

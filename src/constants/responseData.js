@@ -22,7 +22,7 @@ export const respData = {
       rating: null,
       delivery: "Free delivery",
       description: null,
-      store: "Amazon.in",
+      store: "Flipkart",
       type: "iPhone16",
     },
     {
