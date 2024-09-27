@@ -1,9 +1,7 @@
-import { dummyFollowUps } from "../../constants/dummy-data";
-
-const FollowUp = ({ onClick }) => {
+const FollowUp = ({ questions, onClick }) => {
   return (
     <div className="flex justify-center items-center gap-3">
-      {dummyFollowUps.map((followUp, index) => (
+      {questions?.map((followUp, index) => (
         <div
           role="presentation"
           onClick={() => onClick(followUp)}
