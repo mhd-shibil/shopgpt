@@ -71,6 +71,16 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
     }
   }, [messageList]);
 
+  useEffect(() => {
+    if (isLoading) {
+      document.getElementById("loader").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
+  }, [isLoading]);
+
   return (
     <div
       className={classNames(
@@ -121,7 +131,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           </div>
         ))}
         {isLoading && (
-          <div>
+          <div id="loader">
             {lastMessage && (
               <div className="bg-[#DCD3E9] py-1 px-[20px] rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto text-[14px] font-bold">
                 {lastMessage}
