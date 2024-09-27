@@ -9,6 +9,7 @@ import { List } from "./list/List";
 import VideoList from "./videoList/VideoList";
 import VoiceRecorder from "../components/voice/voiceRecorder";
 import Loader from "../components/loader/Loader";
+import FollowUp from "./follow-up/FollowUp";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
@@ -18,7 +19,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
 
   const getData = async (text) => {
     setIsLoading(true);
-    const url = `https://9128-103-138-236-18.ngrok-free.app/api/v1/shopGPT?input=${encodeURIComponent(
+    const url = `http://192.168.5.38:3000/api/v1/shopGPT?input=${encodeURIComponent(
       text
     )}`;
     try {
@@ -57,6 +58,10 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
 
   const handleTry = () => {
     console.log("Trying on...");
+  };
+
+  const handleFollowUpClick = (value) => {
+    onSubmit(value);
   };
 
   useEffect(() => {
@@ -130,6 +135,9 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
             )}
           </div>
         ))}
+        {messageList.length >= 1 && !isLoading && (
+          <FollowUp onClick={handleFollowUpClick} />
+        )}
         {isLoading && (
           <div id="loader">
             {lastMessage && (
