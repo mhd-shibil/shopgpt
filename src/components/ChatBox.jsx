@@ -216,7 +216,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           }}
           value={text}
           placeholder="Start typing here..."
-          className="w-full h-full ml-4 outline-none text-lg"
+          className="w-full h-full ml-4 outline-none text-lg font-medium"
         />
         <VoiceRecorder
           setText={(text) => {
