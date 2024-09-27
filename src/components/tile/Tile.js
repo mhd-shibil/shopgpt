@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const Tile = ({ data, isAnyTileHovered, setIsAnyTileHovered }) => {
   const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
       className="w-full h-full rounded-lg flex justify-center items-center shadow-lg border relative overflow-hidden"
@@ -59,6 +60,13 @@ const Tile = ({ data, isAnyTileHovered, setIsAnyTileHovered }) => {
           <h3 className="text-lg font-bold text-black">{data.name}</h3>
           <p className="text-sm my-2 text-black">${data.price}</p>
           <img src={arrow} alt="link" />
+        </div>
+      )}
+
+      {/* Discount Tag */}
+      {data.discount && (
+        <div className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-lg font-bold">
+          {data.discount}% OFF
         </div>
       )}
     </motion.div>

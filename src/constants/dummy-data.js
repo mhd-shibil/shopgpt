@@ -9,29 +9,31 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.myntra.com/lehenga-choli/bitiya+by+bhama/bitiya-by-bhama-girls-floral-printed-ready-to-wear-lehenga--blouse-with-dupatta/24985968/buy",
+    discount: "50",
   },
   {
     key: "1",
     name: "The Majesta Watch Band",
     price: "₹1,23,953",
     siteName: "Bluestone",
-    productImg:
-      "https://kinclimg5.bluestone.com/f_webp/static/hp/d/e19_v2.jpg",
+    productImg: "https://kinclimg5.bluestone.com/f_webp/static/hp/d/e19_v2.jpg",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
+    discount: "60",
   },
   {
     key: "2",
     name: "Raymond Men Pure Cotton Slim Fit Opaque Formal Shirt",
     price: "899",
-    brand: 'Raymond',
+    brand: "Raymond",
     siteName: "Amazon",
     productImg:
       "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/22899046/2023/5/23/d86486f4-e5ec-46ef-a502-731df4f319fb1684831783758-Raymond-Men-Shirts-4261684831783380-4.jpg",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.myntra.com/shirts/raymond/raymond-men-pure-cotton-slim-fit-opaque-formal-shirt/22899046/buy",
+    discount: "50",
   },
   {
     key: "4",
@@ -43,6 +45,7 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
+    discount: "70",
   },
   {
     key: "5",
@@ -54,17 +57,18 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.myntra.com/dresses/claura/claura-women-floral-print-mandarin-collar-short-sleeves-fit-and-flare-midi-dress/30207959/buy",
+    discount: "50",
   },
   {
     key: "6",
     name: "The Dazzling Eliora Necklace",
     price: "₹51,539",
     siteName: "Amazon",
-    productImg:
-      "https://kinclimg5.bluestone.com/f_webp/static/hp/d/e8_v2.jpg",
+    productImg: "https://kinclimg5.bluestone.com/f_webp/static/hp/d/e8_v2.jpg",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.bluestone.com/watch+accessory/the-majesta-watch-band~81007.html",
+    discount: "40",
   },
   {
     key: "7",
@@ -76,6 +80,7 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://in.danielwellington.com/products/retro-digital-light-grey",
+    discount: "50",
   },
   {
     key: "8",
@@ -88,7 +93,8 @@ export const cardsArray = [
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.bluestone.com/adjustable+rings/the-zwart-black-slider-ring~88685.html",
     videoLink: "https://kinvid1.bluestone.com/output/mp4/1_v0.mp4/1_v0.mp4",
-    type: "video"
+    type: "video",
+    discount: "70",
   },
   {
     key: "9",
@@ -100,6 +106,7 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
+    discount: "30",
   },
   {
     key: "10",
@@ -111,6 +118,7 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
+    discount: "50",
   },
   {
     key: "111",
@@ -122,6 +130,7 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
+    discount: "60",
   },
   {
     key: "112",
@@ -133,6 +142,7 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
+    discount: "10",
   },
   {
     key: "113",
@@ -144,6 +154,7 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.helioswatchstore.com/armani-exchange-men-dante-round-grey-watches-ax1877",
+    discount: "70",
   },
   {
     key: "114",
@@ -155,6 +166,7 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
+    discount: "80",
   },
   {
     key: "115",
@@ -166,6 +178,7 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
+    discount: "50",
   },
   {
     key: "116",
@@ -177,6 +190,7 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
+    discount: "70",
   },
   {
     key: "117",
@@ -221,7 +235,8 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
-  },{
+  },
+  {
     key: "111",
     name: "Product 1",
     price: "29.99",
@@ -440,7 +455,8 @@ export const cardsArray = [
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
-  },{
+  },
+  {
     key: "211",
     name: "Product 1",
     price: "29.99",
