@@ -31,8 +31,6 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
       });
       // const resp = { ok: true, respData };
 
-      // console.log({ resp });
-
       if (resp.ok) {
         const data = await resp.json();
         // const data = respData;
@@ -113,28 +111,33 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           }
         )}
       >
-        {messageList?.map((message, index) => (
-          <div key={message.id} id={message.id}>
+        {messageList?.map((message) => (
+          <div key={message.id}>
             {message?.request && (
-              <div className="bg-[#DCD3E9] py-1 px-[20px] rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto text-[14px] font-bold">
+              <div className="bg-[#F5F5F5] py-1 px-6 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto font-bold text-base">
                 {message?.request}
               </div>
             )}
-            {message?.response?.text && (
-              <div className="bg-yellow-200 p-2 rounded-[30px] flex items-center border border-border w-fit">
-                {message?.response?.text}
-              </div>
-            )}
-            {message?.response?.videos && <VideoList />}
-            {message?.response?.products && (
-              <List cards={message?.response?.products} handleTry={handleTry} />
-            )}
+            <div id={message.id}>
+              {message?.response?.text && (
+                <div className="bg-yellow-200 p-2 rounded-[30px] flex items-center border border-border w-fit">
+                  {message?.response?.text}
+                </div>
+              )}
+              {message?.response?.videos && <VideoList />}
+              {message?.response?.products && (
+                <List
+                  cards={message?.response?.products}
+                  handleTry={handleTry}
+                />
+              )}
+            </div>
           </div>
         ))}
         {isLoading && (
           <div id="loader">
             {lastMessage && (
-              <div className="bg-[#DCD3E9] py-1 px-[20px] rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto text-[14px] font-bold">
+              <div className="bg-[#F5F5F5] py-1 px-6 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto font-bold text-base">
                 {lastMessage}
               </div>
             )}
