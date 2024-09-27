@@ -12,14 +12,15 @@ export const cardsArray = [
   },
   {
     key: "2",
-    name: "Product 1",
-    price: "29.99",
+    name: "Raymond Men Pure Cotton Slim Fit Opaque Formal Shirt",
+    price: "899",
+    brand: 'Raymond',
     siteName: "Amazon",
     productImg:
       "https://ikall.in/wp-content/uploads/2023/06/51sJmHfw92L._SL1000_-600x600.jpg",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
-    link: "https://www.amazon.com",
+    link: "https://www.myntra.com/shirts/raymond/raymond-men-pure-cotton-slim-fit-opaque-formal-shirt/22899046/buy",
   },
   {
     key: "3",
