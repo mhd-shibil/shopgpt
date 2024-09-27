@@ -49,7 +49,7 @@ export const cardsArray = [
   },
   {
     key: "4",
-    name: "Product 1232",
+    name: "Iphone 12",
     price: "29.99",
     siteName: "Amazon",
     productImg:
@@ -573,3 +573,5 @@ export const dummyFollowUps = [
   "What are the latest offers on iphone 16?",
   "Show some competitor Phones",
 ];
+
+
