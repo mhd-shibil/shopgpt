@@ -30,13 +30,26 @@ const Tile = ({ data, isAnyTileHovered, setIsAnyTileHovered }) => {
         repeatType: "mirror", // Animation reverses direction each cycle
       }}
     >
-      <img
-        src={data.productImg}
-        alt="product"
-        className={`w-full h-full object-cover rounded-lg transition-opacity duration-300 object-top ${
-          isHovered ? "opacity-50 blur-sm" : "opacity-100"
-        }`}
-      />
+      {data.type === "video" ? (
+        <video
+          className={`w-full h-full object-cover rounded-lg transition-opacity duration-300 object-top ${
+            isHovered ? "opacity-50 blur-sm" : "opacity-100"
+          }`}
+          poster={data.productImg}
+          autoPlay
+          muted
+        >
+          <source src={data.videoLink} type="video/mp4" />
+        </video>
+      ) : (
+        <img
+          src={data.productImg}
+          alt="product"
+          className={`w-full h-full object-cover rounded-lg transition-opacity duration-300 object-top ${
+            isHovered ? "opacity-50 blur-sm" : "opacity-100"
+          }`}
+        />
+      )}
 
       {isHovered && (
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black bg-opacity-10 p-4 rounded-lg">
