@@ -44,12 +44,10 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
     }
   };
 
-  const onSubmit = (e) => {
-    if (e.key === "Enter") {
-      getData(e.target.value);
-      setText("");
-      setIsFocused(true);
-    }
+  const onSubmit = (value) => {
+    getData(value);
+    setText("");
+    setIsFocused(true);
   };
 
   const handleTry = () => {
@@ -125,14 +123,23 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
         </div>
         <input
           onChange={(e) => setText(e.target.value)}
-          onKeyDown={onSubmit}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") onSubmit(e.target.value);
+          }}
           value={text}
           placeholder="Start typing here..."
           className="w-full h-full ml-4 outline-none"
         />
-        <VoiceRecorder setText={setText} />
+        <VoiceRecorder
+          setText={(text) => {
+            setText(text);
+            setTimeout(() => {
+              onSubmit(text);
+            }, 500);
+          }}
+        />
         <button
-          onClick={onSubmit}
+          onClick={() => onSubmit(text)}
           className="hover:scale-110 transition-transform"
         >
           <SendIcon />
