@@ -567,3 +567,9 @@ export const cardsArray = [
     link: "https://www.amazon.com",
   },
 ];
+
+export const dummyFollowUps = [
+  "Show the latest iphones",
+  "What are the latest offers on iphone 16?",
+  "Show some competitor Phones",
+];
