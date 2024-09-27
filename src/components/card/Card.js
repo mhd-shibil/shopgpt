@@ -28,7 +28,7 @@ const Card = ({ details, handleTry }) => {
           className="flex justify-center items-center mb-4 w-full h-[150px] object-cover rounded-lg"
         />
         <h2 style={styles.name}>{title}</h2>
-        <p style={styles.price}>Price: ${price}</p>
+        <p style={styles.price}>Price: {price}</p>
       </div>
 
       {/* Discount Tag */}

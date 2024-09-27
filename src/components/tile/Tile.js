@@ -58,7 +58,7 @@ const Tile = ({ data, isAnyTileHovered, setIsAnyTileHovered }) => {
           onClick={() => window.open(data.link, "_blank")}
         >
           <h3 className="text-lg font-bold text-black">{data.name}</h3>
-          <p className="text-sm my-2 text-black">${data.price}</p>
+          <p className="text-sm my-2 text-black">{data.price}</p>
           <img src={arrow} alt="link" />
         </div>
       )}
