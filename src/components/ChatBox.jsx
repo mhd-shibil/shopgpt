@@ -20,7 +20,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [lastMessage, setLastMessage] = useState("");
 
   const getData = async (text) => {
-    if (text.includes("video")) {
+    if (text.includes("review")) {
       let videoList = [];
       if (text.includes("iphone")) {
         videoList = iphoneVideoData;
