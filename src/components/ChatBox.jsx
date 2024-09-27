@@ -6,25 +6,30 @@ import { IconButton } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { List } from "./list/List";
 import { cardsArray } from "../constants/dummy-data";
-import { motion } from "framer-motion";
 import VideoList from "./videoList/VideoList";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
+  const [messageList,setMessageList]= useState([]);
 
-  const onSubmit = (e) => {
-    if (e.key === "Enter") {
-      setText("");
-      setIsFocused(true);
+
+  const onSubmit = (e)=>{
+    if(e.key==='Enter') {
+      setMessageList(curr=>[...curr,{
+        request: e.target.value,
+        response:{text: e.target.value + 'Response'}
+      }])
+      setText('')
+      setIsFocused(true)
     }
-  };
+    }
 
   return (
     <div
       className={classNames(
         "p-6 fixed bottom-10 left-60 right-60 bg-background rounded-xl shadow-[0px_0px_100px_5px_#0000001A] border border-[#9747FF] flex flex-col justify-end z-20",
         {
-          "bg-[#EEE8F5]": isFocused,
+          "bg-[#EEE8F5] pt-8": isFocused,
         }
       )}
     >
@@ -32,8 +37,8 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
         <IconButton
           sx={{
             position: "absolute",
-            right: "20px",
-            top: "20px",
+            right: "5px",
+            top: "5px",
             zIndex: 10,
           }}
           onClick={() => setIsFocused(false)}
@@ -42,18 +47,23 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
         </IconButton>
       )}
 
-      <div
-        className={classNames(
-          `transition-all h-0 w-full duration-500 flex-grow overflow-auto ${
-            isFocused ? "mt-10 h-[70vh]" : ""
-          }`,
-          {
-            "": isFocused,
-          }
-        )}
-      >
-        {isFocused && <List cards={cardsArray} />}
-        {/* {isFocused && <VideoList />} */}
+<div
+className={classNames(
+  "transition-all h-0 w-full duration-500 flex-grow overflow-auto flex flex-col gap-4",
+  {
+    "h-[80vh]": isFocused,
+  }
+)}
+>
+
+      {messageList?.map(message=>(
+        <div>
+        {message?.request&&<div className="bg-white p-2 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto">{message?.request}</div>}
+        {message?.response?.text&&<div className="bg-yellow-200 p-2 rounded-[30px] flex items-center border border-border w-fit">{message?.response?.text}</div>}
+        {message?.VideoList&&<VideoList />}
+        {message?.productList&&<List cards={cardsArray} />}
+        </div>
+      ))}
       </div>
 
       <div className="bg-white p-2 w-full rounded-[30px] flex items-center border border-border">
@@ -67,17 +77,11 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           placeholder="Start typing here..."
           className="w-full h-full ml-4 outline-none"
         />
-        <button onClick={onSubmit}>
-          <motion.div
-            whileHover={{ scale: 1.2, rotate: 360 }}
-            whileTap={{
-              scale: 0.8,
-              rotate: -90,
-              borderRadius: "100%",
-            }}
+        <button
+          onClick={onSubmit}
+          className="hover:scale-110 transition-transform"
           >
             <SendIcon />
-          </motion.div>
         </button>
       </div>
     </div>
