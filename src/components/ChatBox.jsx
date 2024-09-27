@@ -48,6 +48,10 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
     }
   };
 
+  const handleTry = () => {
+    console.log("Trying on...");
+  };
+
   return (
     <div
       className={classNames(
@@ -92,7 +96,9 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
               </div>
             )}
             {message?.response?.videos && <VideoList />}
-            {message?.response?.products && <List cards={message?.response?.products} />}
+            {message?.response?.products && (
+              <List cards={message?.response?.products} handleTry={handleTry} />
+            )}
           </div>
         ))}
       </div>

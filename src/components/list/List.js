@@ -21,7 +21,7 @@ const item = {
   },
 };
 
-export const List = ({ cards }) => (
+export const List = ({ cards, handleTry }) => (
   <motion.ul
     className="container"
     variants={container}
@@ -31,7 +31,7 @@ export const List = ({ cards }) => (
     <div className="flex gap-2 flex-wrap">
       {cards.map((card, index) => (
         <motion.li key={index} className="item" variants={item}>
-          <Card details={card} />
+          <Card details={card} handleTry={handleTry} />
         </motion.li>
       ))}
     </div>
