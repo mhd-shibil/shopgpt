@@ -1,8 +1,8 @@
 const VideoThumbnail = ({ videoLink = "" }) => {
   const getThumbanilUrl = () => {
     const youtubeId =
-      videoLink.split("watch?v=").length > 1
-        ? videoLink.split("watch?v=")[1]
+      videoLink?.split("watch?v=").length > 1
+        ? videoLink?.split("watch?v=")[1]
         : "";
     return `https://img.youtube.com/vi/${youtubeId}/sddefault.jpg`;
   };

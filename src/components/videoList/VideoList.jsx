@@ -2,33 +2,9 @@ import { useRef, useState } from "react";
 import VideoPlayer from "./VideoPlayer";
 import VideoThumbnail from "./VideoThumbnail";
 
-const VideoList = () => {
+const VideoList = ({ videos, autoPlay }) => {
   const videoSectionRef = useRef(null);
-
-  const videoList = [
-    {
-      id: 1,
-      url: "https://www.youtube.com/watch?v=a3Ue-LN5B9U",
-    },
-    {
-      id: 2,
-      url: "https://www.youtube.com/watch?v=e1BHIY9p2WU",
-    },
-    {
-      id: 3,
-      url: "https://www.youtube.com/watch?v=uZ2eNBNYVww",
-    },
-    {
-      id: 4,
-      url: "https://www.youtube.com/watch?v=uZ2eNBNYVww",
-    },
-    {
-      id: 5,
-      url: "https://www.youtube.com/watch?v=uZ2eNBNYVww",
-    },
-  ];
-
-  const [activeVideo, setActiveVideo] = useState(videoList[0]);
+  const [activeVideo, setActiveVideo] = useState(videos[0]);
 
   const handleThumbnailClick = (video) => {
     setActiveVideo(video);
@@ -41,13 +17,17 @@ const VideoList = () => {
         className="h-[calc(100%-200px)] mt-16 w-full flex items-center justify-center"
         ref={videoSectionRef}
       >
-        <VideoPlayer videoLink={activeVideo.url} />
+        <VideoPlayer
+          videoLink={activeVideo?.url}
+          startsAt={activeVideo?.startsAt}
+          autoPlay={autoPlay}
+        />
       </div>
 
       <div className=" w-full flex items-center justify-center ">
         <div className="w-full flex justify-center mt-10 gap-6 p-4">
           <div className="flex overflow-x-auto space-x-6">
-            {videoList.map((video) => (
+            {videos?.map((video) => (
               <div key={video.url} onClick={() => handleThumbnailClick(video)}>
                 <VideoThumbnail videoLink={video.url} />
               </div>
