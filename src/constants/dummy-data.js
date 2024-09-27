@@ -1,5 +1,16 @@
 export const cardsArray = [
   {
+    key: "3",
+    name: "Bitiya by Bhama",
+    price: "₹944",
+    siteName: "Myntra",
+    productImg:
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/24985968/2023/9/15/65d450de-043e-4fbc-a98c-afaadf44232c1694787156658BitiyabyBhamaGirlsPeach-ColouredGreenPrintedReadytoWearLehen7.jpg",
+    siteImg:
+      "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
+    link: "https://www.myntra.com/lehenga-choli/bitiya+by+bhama/bitiya-by-bhama-girls-floral-printed-ready-to-wear-lehenga--blouse-with-dupatta/24985968/buy",
+  },
+  {
     key: "1",
     name: "The Majesta Watch Band",
     price: "₹1,23,953",
@@ -23,17 +34,6 @@ export const cardsArray = [
     link: "https://www.myntra.com/shirts/raymond/raymond-men-pure-cotton-slim-fit-opaque-formal-shirt/22899046/buy",
   },
   {
-    key: "3",
-    name: "Producdfsfdsfdsf dsfdsfds fdsfsdfsfdsfsfdsfdst 1",
-    price: "29.99",
-    siteName: "Flipkart",
-    productImg:
-      "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?cs=srgb&dl=pexels-jessbaileydesign-788946.jpg&fm=jpg",
-    siteImg:
-      "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
-    link: "https://www.amazon.com",
-  },
-  {
     key: "4",
     name: "Product 1232",
     price: "29.99",
@@ -46,19 +46,19 @@ export const cardsArray = [
   },
   {
     key: "5",
-    name: "Product 23331",
-    price: "29.99",
-    siteName: "Nyka",
+    name: "Women Floral Print Mandarin Collar Short Sleeves Fit and Flare Midi Dress",
+    price: "₹985",
+    siteName: "Claura",
     productImg:
       "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/30207959/2024/JULY/13/u17rJc9C_abeb91947fd047d7b74525207b455661.jpg",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
-    link: "https://www.amazon.com",
+    link: "https://www.myntra.com/dresses/claura/claura-women-floral-print-mandarin-collar-short-sleeves-fit-and-flare-midi-dress/30207959/buy",
   },
   {
     key: "6",
-    name: "Product fgf1",
-    price: "29.99",
+    name: "The Dazzling Eliora Necklace",
+    price: "₹51,539",
     siteName: "Amazon",
     productImg:
       "https://kinclimg5.bluestone.com/f_webp/static/hp/d/e8_v2.jpg",
@@ -134,14 +134,14 @@ export const cardsArray = [
   },
   {
     key: "113",
-    name: "Pr34344fdfdf1",
-    price: "29.99",
+    name: "Armani Exchange",
+    price: "₹10,495",
     siteName: "Flipkart",
     productImg:
-      "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?cs=srgb&dl=pexels-jessbaileydesign-788946.jpg&fm=jpg",
+      "https://static.helioswatchstore.com/media/easyslide/AX1877_2.webp",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
-    link: "https://www.amazon.com",
+    link: "https://www.helioswatchstore.com/armani-exchange-men-dante-round-grey-watches-ax1877",
   },
   {
     key: "114",
