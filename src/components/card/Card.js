@@ -42,7 +42,7 @@ const Card = ({ details, handleTry }) => {
       {isTryOn && (
         <button
           onClick={handleTry}
-          className="rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-4 py-2 font-normal text-sm"
+          className="rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-4 py-1 font-normal text-sm"
         >
           Try On
         </button>
