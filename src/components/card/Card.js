@@ -11,7 +11,7 @@ const Card = ({ details }) => {
         <img
           src={productImg}
           alt="product"
-          className="flex justify-center items-center w-full mb-4"
+          className="flex justify-center items-center mb-4 w-[100px] h-[150px] object-cover rounded-lg"
         />
         <h2 style={styles.name}>{name}</h2>
         <p style={styles.price}>Price: ${price}</p>
