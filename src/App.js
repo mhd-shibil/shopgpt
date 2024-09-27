@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <TopBar />
-      <div className="h-[calc(100vh-200px)] mt-[201px] overflow-hidden px-[32px]">
+      <div className="h-[calc(100vh-200px)] mt-[200px] overflow-auto px-[32px] no-scrollbar">
         <TileList />
       </div>
     </div>
