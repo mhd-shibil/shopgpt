@@ -7,7 +7,7 @@ const Tile = ({ data }) => {
 
   return (
     <div
-      className="w-full h-full rounded-lg bg-[#F9F5FC] flex justify-center items-center shadow-lg border relative overflow-hidden"
+      className="w-full h-full rounded-lg flex justify-center items-center shadow-lg border relative overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -15,7 +15,7 @@ const Tile = ({ data }) => {
         src={data.productImg}
         alt="product"
         className={`w-full h-full object-cover rounded-lg transition-opacity duration-300 ${
-          isHovered ? "opacity-50" : "opacity-100"
+          isHovered ? "opacity-50 blur-sm" : "opacity-100"
         }`}
       />
 
