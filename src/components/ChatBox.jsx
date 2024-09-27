@@ -8,6 +8,7 @@ import { Close } from "@mui/icons-material";
 import { List } from "./list/List";
 import VideoList from "./videoList/VideoList";
 import { respData } from "../constants/responseData";
+import VoiceRecorder from "../components/voice/voiceRecorder";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
@@ -122,6 +123,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           placeholder="Start typing here..."
           className="w-full h-full ml-4 outline-none"
         />
+        <VoiceRecorder setText={setText} />
         <button
           onClick={onSubmit}
           className="hover:scale-110 transition-transform"
