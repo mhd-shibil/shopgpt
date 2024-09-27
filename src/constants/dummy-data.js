@@ -36,18 +36,6 @@ export const cardsArray = [
     discount: "50",
   },
   {
-    key: "4",
-    name: "Product 1232",
-    price: "29.99",
-    siteName: "Amazon",
-    productImg:
-      "https://cdn.mos.cms.futurecdn.net/yDn3ZSXu9eSBxmXQDZ4PCF-1200-80.jpg",
-    siteImg:
-      "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
-    link: "https://www.amazon.com",
-    discount: "70",
-  },
-  {
     key: "5",
     name: "Women Floral Print Mandarin Collar Short Sleeves Fit and Flare Midi Dress",
     price: "₹985",
@@ -58,6 +46,18 @@ export const cardsArray = [
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.myntra.com/dresses/claura/claura-women-floral-print-mandarin-collar-short-sleeves-fit-and-flare-midi-dress/30207959/buy",
     discount: "50",
+  },
+  {
+    key: "4",
+    name: "Product 1232",
+    price: "29.99",
+    siteName: "Amazon",
+    productImg:
+      "https://cdn.mos.cms.futurecdn.net/yDn3ZSXu9eSBxmXQDZ4PCF-1200-80.jpg",
+    siteImg:
+      "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
+    link: "https://www.amazon.com",
+    discount: "70",
   },
   {
     key: "6",
@@ -71,16 +71,16 @@ export const cardsArray = [
     discount: "40",
   },
   {
-    key: "7",
-    name: "Retro Digital Light Grey",
-    price: "₹13,299",
-    siteName: "Daniel Willington",
+    key: "113",
+    name: "Armani Exchange",
+    price: "₹10,495",
+    siteName: "Flipkart",
     productImg:
-      "https://in.danielwellington.com/cdn/shop/files/ocect2ehddwy6gjzxnh4.jpg?v=1725007360&width=540",
+      "https://static.helioswatchstore.com/media/easyslide/AX1877_2.webp",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
-    link: "https://in.danielwellington.com/products/retro-digital-light-grey",
-    discount: "50",
+    link: "https://www.helioswatchstore.com/armani-exchange-men-dante-round-grey-watches-ax1877",
+    discount: "70",
   },
   {
     key: "8",
@@ -95,6 +95,18 @@ export const cardsArray = [
     videoLink: "https://kinvid1.bluestone.com/output/mp4/1_v0.mp4/1_v0.mp4",
     type: "video",
     discount: "70",
+  },
+  {
+    key: "7",
+    name: "Retro Digital Light Grey",
+    price: "₹13,299",
+    siteName: "Daniel Willington",
+    productImg:
+      "https://in.danielwellington.com/cdn/shop/files/ocect2ehddwy6gjzxnh4.jpg?v=1725007360&width=540",
+    siteImg:
+      "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
+    link: "https://in.danielwellington.com/products/retro-digital-light-grey",
+    discount: "50",
   },
   {
     key: "9",
@@ -143,18 +155,6 @@ export const cardsArray = [
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
     discount: "10",
-  },
-  {
-    key: "113",
-    name: "Armani Exchange",
-    price: "₹10,495",
-    siteName: "Flipkart",
-    productImg:
-      "https://static.helioswatchstore.com/media/easyslide/AX1877_2.webp",
-    siteImg:
-      "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
-    link: "https://www.helioswatchstore.com/armani-exchange-men-dante-round-grey-watches-ax1877",
-    discount: "70",
   },
   {
     key: "114",
