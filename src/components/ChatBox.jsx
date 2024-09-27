@@ -19,12 +19,12 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [messageList, setMessageList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [lastMessage, setLastMessage] = useState("");
-  const [userId,setUserId] = useState("");
+  const [userId, setUserId] = useState("");
 
   const getData = async (text) => {
-    let currentUserId = userId
-    if(!currentUserId){
-      currentUserId=uuidv4();
+    let currentUserId = userId;
+    if (!currentUserId) {
+      currentUserId = uuidv4();
       setUserId(currentUserId);
     }
     if (text.includes("review")) {
@@ -52,6 +52,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
         },
       });
       // const resp = { ok: true, respData };
+      setIsLoading(false);
 
       if (resp.ok) {
         const data = await resp.json();
@@ -63,23 +64,29 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
       } else {
         setMessageList((curr) => [
           ...curr,
-          { request: text, response: {
-            text: "Sorry, I am not able to fetch the data right now. Please try again later.",
-          }, id: uuidv4() },
+          {
+            request: text,
+            response: {
+              text: "Sorry, I am not able to fetch the data right now. Please try again later.",
+            },
+            id: uuidv4(),
+          },
         ]);
         console.error(`Error: ${resp.status} ${resp.statusText}`);
       }
     } catch (error) {
-
       setMessageList((curr) => [
         ...curr,
-        { request: text, response: {
-          text: "Sorry, I am not able to fetch the data right now. Please try again later.",
-        }, id: uuidv4() },
+        {
+          request: text,
+          response: {
+            text: "Sorry, I am not able to fetch the data right now. Please try again later.",
+          },
+          id: uuidv4(),
+        },
       ]);
       console.error("Fetch error:", error);
     }
-    setIsLoading(false);
   };
 
   const onSubmit = (value) => {
@@ -137,8 +144,9 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
             zIndex: 10,
           }}
           onClick={() => {
-            setUserId('');
-            setIsFocused(false)}}
+            setUserId("");
+            setIsFocused(false);
+          }}
         >
           <Close />
         </IconButton>
@@ -161,26 +169,26 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
             )}
             <div className="flex" id={message.id}>
               <div className="bg-gradient-to-br from-[#C167F6] to-[#5548C7] size-11 flex items-center justify-center rounded-md mr-10">
-                <ResponseIcon/>
+                <ResponseIcon />
               </div>
               <div>
-              {message?.response?.text && (
-                <div className="p-2 rounded-[30px] flex items-center w-fit  font-bold">
-                  {message?.response?.text}
-                </div>
-              )}
-              {message?.response?.videos && (
-                <VideoList
-                  videos={message?.response?.videos}
-                  autoPlay={index + 1 === messageList.length}
-                />
-              )}
-              {message?.response?.products && (
-                <List
-                  cards={message?.response?.products}
-                  handleTry={handleTry}
-                />
-              )}
+                {message?.response?.text && (
+                  <div className="p-2 rounded-[30px] flex items-center w-fit  font-bold">
+                    {message?.response?.text}
+                  </div>
+                )}
+                {message?.response?.videos && (
+                  <VideoList
+                    videos={message?.response?.videos}
+                    autoPlay={index + 1 === messageList.length}
+                  />
+                )}
+                {message?.response?.products && (
+                  <List
+                    cards={message?.response?.products}
+                    handleTry={handleTry}
+                  />
+                )}
               </div>
             </div>
           </div>
