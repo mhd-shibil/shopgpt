@@ -12,6 +12,13 @@ import VideoList from "./videoList/VideoList";
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
 
+  const onSubmit = (e)=>{
+    if(e.key==='Enter') {
+      setText('')
+      setIsFocused(true)
+    }
+    }
+
   return (
     <div
       className={classNames(
@@ -52,13 +59,14 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           <AttatchmentIcon />
         </div>
         <input
-          onFocus={() => setIsFocused(true)}
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e)=>setText(e.target.value)}
+          onKeyDown={onSubmit}
           value={text}
           placeholder="Start typing here..."
           className="w-full h-full ml-4 outline-none"
         />
-        <button>
+        <button
+          onClick={onSubmit}>
           <motion.div
             whileHover={{ scale: 1.2, rotate: 360 }}
             whileTap={{
