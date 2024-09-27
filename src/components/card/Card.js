@@ -8,8 +8,8 @@ const Card = ({ details, handleTry }) => {
     price,
     imgUrl,
     url,
-    discount = "50",
-    isTryOn = true,
+    discount = "",
+    isTryOn = false,
     store,
   } = details;
 
@@ -26,7 +26,7 @@ const Card = ({ details, handleTry }) => {
           alt="product"
           className="flex justify-center items-center mb-4 w-full h-[180px] object-cover object-top rounded-lg"
         />
-        <div className="text-[#303030] font-medium text-sm mx-2">{title}</div>
+        <div className="text-[#303030] font-medium text-sm mx-2 ellipsis-2-lines">{title}</div>
         <div className="text-[#303030] font-bold text-sm mx-2 mt-1">
           {price}
         </div>
@@ -37,7 +37,7 @@ const Card = ({ details, handleTry }) => {
         {isTryOn && (
           <button
             onClick={handleTry}
-            className="rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-4 py-1 font-normal text-sm"
+            className="mt-2 rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-8 py-1 font-normal text-sm"
           >
             Try On
           </button>

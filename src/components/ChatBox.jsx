@@ -10,7 +10,7 @@ import VideoList from "./videoList/VideoList";
 import VoiceRecorder from "../components/voice/voiceRecorder";
 import Loader from "../components/loader/Loader";
 import FollowUp from "./follow-up/FollowUp";
-// import { respData } from "../constants/responseData";
+import { respData } from "../constants/responseData";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
@@ -24,17 +24,17 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
       text
     )}`;
     try {
-      const resp = await fetch(url, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      // const resp = { ok: true, respData };
+      // const resp = await fetch(url, {
+      //   method: "GET",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+      const resp = { ok: true, respData };
 
       if (resp.ok) {
-        const data = await resp.json();
-        // const data = respData;
+        // const data = await resp.json();
+        const data = respData;
         setMessageList((curr) => [
           ...curr,
           { request: text, response: data, id: uuidv4() },
