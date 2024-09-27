@@ -12,12 +12,12 @@ import VideoList from "./videoList/VideoList";
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
 
-  const onSubmit = (e)=>{
-    if(e.key==='Enter') {
-      setText('')
-      setIsFocused(true)
+  const onSubmit = (e) => {
+    if (e.key === "Enter") {
+      setText("");
+      setIsFocused(true);
     }
-    }
+  };
 
   return (
     <div
@@ -44,14 +44,16 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
 
       <div
         className={classNames(
-          "transition-all h-0 w-full duration-500 flex-grow overflow-auto",
+          `transition-all h-0 w-full duration-500 flex-grow overflow-auto ${
+            isFocused ? "mt-10 h-[70vh]" : ""
+          }`,
           {
-            "h-[80vh]": isFocused,
+            "": isFocused,
           }
         )}
       >
-        {/* <List cards={cardsArray} /> */}
-        {isFocused && <VideoList />}
+        {isFocused && <List cards={cardsArray} />}
+        {/* {isFocused && <VideoList />} */}
       </div>
 
       <div className="bg-white p-2 w-full rounded-[30px] flex items-center border border-border">
@@ -59,14 +61,13 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           <AttatchmentIcon />
         </div>
         <input
-          onChange={(e)=>setText(e.target.value)}
+          onChange={(e) => setText(e.target.value)}
           onKeyDown={onSubmit}
           value={text}
           placeholder="Start typing here..."
           className="w-full h-full ml-4 outline-none"
         />
-        <button
-          onClick={onSubmit}>
+        <button onClick={onSubmit}>
           <motion.div
             whileHover={{ scale: 1.2, rotate: 360 }}
             whileTap={{

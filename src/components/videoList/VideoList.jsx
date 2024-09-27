@@ -45,7 +45,7 @@ const VideoList = () => {
       </div>
 
       <div className=" w-full flex items-center justify-center ">
-        <div className="w-full flex justify-center mt-6 gap-6 p-4">
+        <div className="w-full flex justify-center mt-10 gap-6 p-4">
           <div className="flex overflow-x-auto space-x-6">
             {videoList.map((video) => (
               <div key={video.url} onClick={() => handleThumbnailClick(video)}>

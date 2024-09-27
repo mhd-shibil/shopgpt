@@ -27,3 +27,30 @@ code {
     scrollbar-width: none; /* Firefox */
   }
 }
+
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar (for horizontal scroll) */
+}
+
+/* Track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: none; /* Background color of the scrollbar track */
+  border-radius: 6px; /* Rounded corners */
+}
+
+/* Handle (the scroll thumb) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color when hovering over the scrollbar thumb */
+}
+
+/* Optional: for customizing the scrollbar corner in two-way scrolling containers */
+::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
