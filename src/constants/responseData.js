@@ -1,85 +1,129 @@
 export const respData = {
-    "products": [
-        {
-            "url": "https://www.google.com/url?url=https://www.apple.com/in/shop/go/product/MYND3%3Fcid%3Daos-in-seo-pla-iphone-iphone&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwi8s7rPoeOIAxXMVmwGHVbwL0cQguUECPwQ&usg=AOvVaw1HY_wiqWocSleVIRjRXe11",
-            "imgUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcScUU156_fvkKCqS0gkidzJpYze9pkTYR39KouhqLEZokCKAWAHzi1t4mwTzDoZNQPzlULrvm6072UxkYYOx99923cXE8Jrgx9ToqWTuCsnwHWLUoS_q8tq&usqp=CAE",
-            "title": "Apple iPhone 16 Pro - 128 GB - Black Titanium",
-            "price": "₹1,19,900.00",
-            "rating": "3.3",
-            "delivery": "Free delivery",
-            "description": null
-        },
-        {
-            "url": "https://www.google.com/url?url=https://www.apple.com/in/shop/go/product/MYX33%3Fcid%3Daos-in-seo-pla-iphone-iphone&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwi8s7rPoeOIAxXMVmwGHVbwL0cQguUECIoQ&usg=AOvVaw0ZoaJlpsAHN9hka2zvw1pn",
-            "imgUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRvq2r8rO66w0OVYluSJ2xgCkUQRD4iMAbb1rK8D7ChACY1L76IoMzkBGHo0MC3cbbw3x4nUsOluNYxozianUC5SxjdYdLhhDuvOi441FQ5hrr62nn-t9MJKQ&usqp=CAE",
-            "title": "Apple iPhone 16 Pro Max - 512 GB - Natural Titanium",
-            "price": "₹1,64,900.00",
-            "rating": "3.0",
-            "delivery": "Free delivery",
-            "description": null
-        },
-        {
-            "url": "https://www.google.com/url?url=https://www.apple.com/in/shop/go/product/MYNK3%3Fcid%3Daos-in-seo-pla-iphone-iphone&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwi8s7rPoeOIAxXMVmwGHVbwL0cQguUECPYS&usg=AOvVaw1vy8mpE5DAMK8fZ-KqNpZU",
-            "imgUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRocuEKAesEVRn5-96OgsUu7oC3jFOEUjrEs67KwlJNcvFPbrbMSdaPpowNa0GjPRgUAG5JNwKPyY9xJ_ajWJQmps-h3GhW_MSrGZmLHcw4NSctZjEffbth&usqp=CAE",
-            "title": "Apple iPhone 16 Pro - 256 GB - Desert Titanium",
-            "price": "₹1,29,900.00",
-            "rating": "3.3",
-            "delivery": "Free delivery",
-            "description": null
-        },
-        {
-            "url": "https://www.google.com/url?url=https://www.apple.com/in/shop/go/product/MYWW3%3Fcid%3Daos-in-seo-pla-iphone-iphone&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwi8s7rPoeOIAxXMVmwGHVbwL0cQguUECMsS&usg=AOvVaw1k7Nx09d3RFp-lYABSSsvE",
-            "imgUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT1eNK-Qju1bgxQexjxygKteE_HoUu-o5eUiZKJ80jXihfMegq3BuoKgeX0b1hgJ1FUmgj3IO8CibSQCC5RsqG_4oVly67Ms4o0tGbPiqtp01j3jvZu1Bo_&usqp=CAE",
-            "title": "Apple iPhone 16 Pro Max - 256 GB - White Titanium",
-            "price": "₹1,44,900.00",
-            "rating": "3.0",
-            "delivery": "Free delivery",
-            "description": null
-        },
-        {
-            "url": "https://www.google.com/url?url=https://www.apple.com/in/shop/go/product/MYX43%3Fcid%3Daos-in-seo-pla-iphone-iphone&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwi8s7rPoeOIAxXMVmwGHVbwL0cQguUECLwQ&usg=AOvVaw1qum4eZF1mqlrDOH14tkm-",
-            "imgUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQd5cTpngI8R9-BjDNcpkAdrN9KwI5po9iKJX6NLs3KI2-CuMWGR82bf4wbuz847vYqZ0EhVhYkidUUmQQktsbAYB_bCzyJkTfYTEVyVw_MhWF71qPfv8jC&usqp=CAE",
-            "title": "Apple iPhone 16 Pro Max - 1 TB - Black Titanium",
-            "price": "₹1,84,900.00",
-            "rating": "3.0",
-            "delivery": "Free delivery",
-            "description": null
-        },
-        {
-            "url": "https://www.google.com/url?url=https://www.apple.com/in/shop/go/product/MYNT3%3Fcid%3Daos-in-seo-pla-iphone-iphone&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwi8s7rPoeOIAxXMVmwGHVbwL0cQguUECMgR&usg=AOvVaw2LLwvkJTJKeOYAQO1nOWFs",
-            "imgUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTJAiOXMdQuAB1zAiyPKoziL3uogbzMluNE4iF3_HrA2jL_vNA9vAf1Jca6L50OknlVUb0s_9rMqOuwswluzz4YJ6s_ZU5IdgRQk-Jhznt7P-6tH6gQpxJF0A&usqp=CAE",
-            "title": "Apple iPhone 16 Pro - 1 TB - White Titanium",
-            "price": "₹1,69,900.00",
-            "rating": "3.3",
-            "delivery": "Free delivery",
-            "description": null
-        },
-        {
-            "url": "https://www.google.com/url?url=https://www.apple.com/in/shop/go/product/MYNP3%3Fcid%3Daos-in-seo-pla-iphone-iphone&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwi8s7rPoeOIAxXMVmwGHVbwL0cQguUECJUR&usg=AOvVaw3pin73oub4dxL2Z641BaWN",
-            "imgUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ0-MH7QPddZs2hyBYr03PZmEewmz7qNuEp-WSZMQHFYaGFOk8vA7wfcQBJzEaLzmra27h24HJs3QMmtH2tToZig0ZyWD_1DlVtab5ybN1jTEzj_SaMlI28&usqp=CAE",
-            "title": "Apple iPhone 16 Pro - 512 GB - Desert Titanium",
-            "price": "₹1,49,900.00",
-            "rating": "3.3",
-            "delivery": "Free delivery",
-            "description": null
-        },
-        {
-            "url": "https://www.google.com/url?url=https://www.apple.com/in/shop/go/product/MYEC3%3Fcid%3Daos-in-seo-pla-iphone-iphone&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwi8s7rPoeOIAxXMVmwGHVbwL0cQguUECN0P&usg=AOvVaw3lm9R7QFvtPesCTx-RqwPg",
-            "imgUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQqM3hPvH4Xcm2FEYPDfqzovNLVBdo7IDmo2BYqe_t6a1pTTgurcfkcqo6q8UuAqMuNyBL5lYZ7hTIIkJxG4PQF9nGZyQ2QAP8zh-8lFx9Hc48gVbJXOBXR&usqp=CAE",
-            "title": "Apple iPhone 16 - 128 GB - Ultramarine",
-            "price": "₹79,900.00",
-            "rating": "4.8",
-            "delivery": "Free delivery",
-            "description": null
-        },
-        {
-            "url": "https://www.google.com/url?url=/shopping/product/3225823599495019368%3Fprds%3Doid:16158080242847438786,pid:12337596112653343762%26sts%3D9%26hl%3Den%26lsf%3Dseller:10736904,store:16719721023157205337,s:h&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwi8s7rPoeOIAxXMVmwGHVbwL0cQ_uQECNAP&usg=AOvVaw2ufo_xbrx5t03ULwpy9Bzx",
-            "imgUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQjFm1vpFShDOKjRnlACn_EC3OLNYmnqtUbJ5Ad1xmMlcDBAU1HPhQPbr61p7u78uf4ixG36wkCZF1V93cPMsrrKrGIASskYphne3p7KEcR_NhSNdp0FG7ogmw8&usqp=CAE",
-            "title": "Apple iPhone 15 Pro - 128 GB - Black Titanium",
-            "price": "₹1,09,900.00",
-            "rating": "4.4",
-            "delivery": "7.3 km · In stock",
-            "description": null
-        }
-    ]
-}
+  products: [
+    {
+      url: "https://www.google.com/url?url=https://www.amazon.in/LIRAMARK-Liquid-Silicone-Cover-iPhone/dp/B0DG2BGCRX%3Fsource%3Dps-sl-shoppingads-lpcontext%26ref_%3Dfplfs%26psc%3D1%26smid%3DA1WYWER0W24N8S&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjFto-IxeOIAxX2TGwGHakeHZsQgOUECKYQ&usg=AOvVaw2PqDINgwcBMjvtRBFk4BWZ",
+      imgUrl:
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQTHUMKse0Jbuj4Wa83XyiFc0fJzbrUYRz_jv1vZP_EXQ0cTC4tNiBdPoONAAiroE4YibNIjOMJQsKVt9eErsCuXe2Vo8aaptIfVDCO5JJ3IpnA9Kq5BLmH&usqp=CAE",
+      title:
+        "LIRAMARK Liquid Silicone Soft Back Cover Case for Apple iPhone 16 (6.1 inch) (Pink)",
+      price: "₹399.00",
+      rating: null,
+      delivery: "₹40.00 delivery",
+      description: null,
+      store: "Amazon.in",
+      type: "iPhone16",
+    },
+    {
+      url: "https://www.google.com/url?url=https://www.amazon.in/Ringke-Fusion-Compatible-Transparent-Resistant/dp/B0DF92W2SG%3Fsource%3Dps-sl-shoppingads-lpcontext%26ref_%3Dfplfs%26psc%3D1%26smid%3DA2BGD8JXXKDT3R&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjFto-IxeOIAxX2TGwGHakeHZsQguUECLIQ&usg=AOvVaw3BdEQ4pWuWDmw91Dy5uZGN",
+      imgUrl:
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTeMVOkqntydJ2OkmheqlL5fldgkOitay-YnHptHwoE8uFi1CieN-I9Fr_4rTAKJXkj9Np4RgIK_7qKAVs2bnRs32iSXtn51RG1SEjB0e2QMXNYFweJrYNoTA&usqp=CAE",
+      title: "Ringke iPhone 16 Plus Back Cover Case | Fusion - Clear",
+      price: "₹979.00",
+      rating: null,
+      delivery: "Free delivery",
+      description: null,
+      store: "Amazon.in",
+      type: "iPhone16",
+    },
+    {
+      url: "https://www.google.com/url?url=https://www.amazon.in/TheGiftKart-Shockproof-Protection-Silicone-Transparent/dp/B0DF5T199N%3Fsource%3Dps-sl-shoppingads-lpcontext%26ref_%3Dfplfs%26psc%3D1%26smid%3DA3RU4MEDJKV1YX&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjFto-IxeOIAxX2TGwGHakeHZsQguUECMUO&usg=AOvVaw3xV91z1dSO6r_bfJiY2nMy",
+      imgUrl:
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRmgpY5qg4jIh_b_WgCtvmvRC8SUryg4ENk8v9qM9vViRcFIBx_8gOZmCOkSKFu_3LtSh1wBTBOUgX3TeO-4tpZtLLh1KHYnmE0XlbxUQirAEi2iR5zSh1P&usqp=CAE",
+      title:
+        "TheGiftKart Shockproof Back Cover Case for iPhone 16 | Raised Bumps for Camera ...",
+      price: "₹251.00",
+      rating: null,
+      delivery: "₹40.00 delivery",
+      description: null,
+      store: "Amazon.in",
+      type: "iPhone16",
+    },
+    {
+      url: "https://www.google.com/url?url=https://www.amazon.in/Ringke-Fusion-Magnetic-Compatible-Transparent/dp/B0DF8GNR3L%3Fsource%3Dps-sl-shoppingads-lpcontext%26ref_%3Dfplfs%26psc%3D1%26smid%3DA2BGD8JXXKDT3R&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjFto-IxeOIAxX2TGwGHakeHZsQguUECJwP&usg=AOvVaw036uTc6Ji0B1389aGZQTzc",
+      imgUrl:
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS4C7p5pu7hYx0qtwvCJl48Ut_MMd3l3AKdMol5-6I98LCY4BaPK8fyo-9wdFJ30jZmSSq1snWdUSTUWvX-3tAJeszTcbQgBzncgitDK50JxhANCWdFdnKv&usqp=CAE",
+      title:
+        "Ringke Fusion Magnetic Compatible with iPhone 16 Plus Case Cover [Strong Magnet ...",
+      price: "₹1,469.00",
+      rating: null,
+      delivery: "Free delivery",
+      description: null,
+      store: "Amazon.in",
+      type: "iPhone16",
+    },
+    {
+      url: "https://www.google.com/url?url=https://www.amazon.in/elago-Compatible-Protective-Shockproof-Anti-Scratch/dp/B0D7GMHSV1%3Fsource%3Dps-sl-shoppingads-lpcontext%26ref_%3Dfplfs%26psc%3D1%26smid%3DA2OF9DJ6T0ZVIN&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjFto-IxeOIAxX2TGwGHakeHZsQguUECJEO&usg=AOvVaw3V64j_NB1rSTEJlxxTe5tE",
+      imgUrl:
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ4tcPhSfzG116E0-jmJQZ9t_mwUG6ThgO5MoqlLRZ7S3CdQCf0etrqCx8M1zcGxCFVL9UhuyT6OWdDWaoX3aQ_22zSbnJZLgEFIiZVsLky3Dz3eARtbwO8&usqp=CAE",
+      title:
+        "elago Compatible with iPhone 16 Pro Max Case, Premium Liquid Silicone Case, Full ...",
+      price: "₹1,039.00",
+      rating: null,
+      delivery: "Free delivery",
+      description: null,
+      store: "Amazon.in",
+      type: "iPhone16",
+    },
+    {
+      url: "https://www.google.com/url?url=https://www.amazon.in/TheGiftKart-Translucent-iPhone-16-Black/dp/B0DF5RK7C3%3Fsource%3Dps-sl-shoppingads-lpcontext%26ref_%3Dfplfs%26psc%3D1%26smid%3DA3RU4MEDJKV1YX&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjFto-IxeOIAxX2TGwGHakeHZsQguUECPUM&usg=AOvVaw2PApWrbaIeyrVP60EB00ql",
+      imgUrl:
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQwNMVINuAQvGn_ZMClDNa4FznIS8qpst9YE9m9Acv0QtxxAv7Uw_l80ccULk6--82-6J1PO2UatJDZJ_0quEpIpGSoaL2BkuOF4mhJwt4&usqp=CAE",
+      title:
+        "TheGiftKart Hybrid Matte Frosted Translucent Back Cover Case for iPhone 16 ...",
+      price: "₹299.00",
+      rating: null,
+      delivery: "₹40.00 delivery",
+      description: null,
+      store: "Amazon.in",
+      type: "iPhone16",
+    },
+    {
+      url: "https://www.google.com/url?url=https://www.croma.com/apple-soft-silicone-back-cover-for-apple-iphone-16-pro-max-magsafe-charging-support-black-/p/310410%3Fsrsltid%3DAfmBOooGspkmLc7Kx06EGglUL1J47wxAlt48K5ohOwZJXHlokqV5vdc7w_w%26com_cvv%3Dd30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjFto-IxeOIAxX2TGwGHakeHZsQguUECLcO&usg=AOvVaw27y4zrNGrCtikGRV2ML3Du",
+      imgUrl:
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRtVAoLUM9nYHPE0RKoNf1j1uAcQFIV2fejac9xcgkLSdPwxV1n8lsDGLKvQyJAuMMZbZgK2UfVte7ttz-XfPMP1wTqE-481cnzKryJGKh-4kRVoK0eOOmCwg&usqp=CAE",
+      title: "Apple iPhone 16 Pro Max Silicone Case with MagSafe – Black",
+      price: "₹4,900.00",
+      rating: "4.6",
+      delivery: "Free delivery",
+      description: null,
+      store: "Croma",
+      type: "iPhone16",
+    },
+    {
+      url: "https://www.google.com/url?url=https://www.croma.com/apple-polycarbonate-back-cover-for-apple-iphone-16-magsafe-charging-support-clear-/p/310332%3Fsrsltid%3DAfmBOoo990m0oQHCKbnwumRZyv7BiM-Pg02aXYDOWjFRiXtk-hGkswF37Mw%26com_cvv%3Dd30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjFto-IxeOIAxX2TGwGHakeHZsQguUECNgM&usg=AOvVaw1LeGc-_ufadWwE5rxCq3ZO",
+      imgUrl:
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRJXA2-_VOoHPKDAT94Oy4VOgvp0OuR1DL77_sC3Vj5ri0d-RSGCLsmZBiIws_7t-QB9DLYhTAXiZXsK3T63ycH56sqIBlqq1h29ftLGPRC1e-Rv7pY4rVv&usqp=CAE",
+      title: "Apple iPhone 16 Clear Case with MagSafe",
+      price: "₹4,900.00",
+      rating: "4.7",
+      delivery: "Free delivery",
+      description: null,
+      store: "Croma",
+      type: "iPhone16",
+    },
+    {
+      url: "https://www.google.com/url?url=https://www.croma.com/apple-soft-silicone-back-cover-for-apple-iphone-16-pro-magsafe-charging-support-black-/p/310389%3Fsrsltid%3DAfmBOoowAQoYKydzrn8pIwid8IAiPqYR8T0_c5U5rYkMDLYtHPVe00Fdsl8%26com_cvv%3Dd30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjFto-IxeOIAxX2TGwGHakeHZsQguUECM8N&usg=AOvVaw1o7Zm6g1feMYrL7HVwkSzr",
+      imgUrl:
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR1M91OCkYSg_PRe9rzv4dTaGmA30qKlBQNJkhzZAN9GMIATgRI70qTWHcIbhDq6CPJ0eAyWzAg1djvgZpWm7rY08cFsEfl4DVKU1vruW4znb7gFwBUxl4e&usqp=CAE",
+      title: "Apple iPhone 16 Pro Silicone Case with MagSafe - Black",
+      price: "₹4,900.00",
+      rating: "5.0",
+      delivery: "Free delivery",
+      description: null,
+      store: "Croma",
+      type: "iPhone16",
+    },
+    {
+      url: "https://www.google.com/url?url=https://www.croma.com/apple-polycarbonate-back-cover-for-apple-iphone-16-pro-magsafe-charging-support-clear-/p/310341%3Fsrsltid%3DAfmBOoqQYbDG5C_dsxqhySJid2YuIRCJdg5eOb4uxfUIOLTaBa0Ep8eRoZQ%26com_cvv%3Dd30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjFto-IxeOIAxX2TGwGHakeHZsQguUECOcM&usg=AOvVaw2GkrJ8NfikcQtWu55LkohR",
+      imgUrl:
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQlrZ4FlvaeavMX-kJ-j-mVaePqrTBumGCufdl9Aub0D9szMpqQU8Wf5rGY0ndTkrKTo377PN5Q-1zJdVgqXAwph5cnDfF6Mt287RkL35FPVyG-mFECxzs-2w&usqp=CAE",
+      title: "Apple iPhone 16 Pro Clear Case with MagSafe",
+      price: "₹4,900.00",
+      rating: "4.8",
+      delivery: "Free delivery",
+      description: null,
+      store: "Croma",
+      type: "iPhone16",
+    },
+  ],
+};

@@ -1,18 +1,17 @@
 import React from "react";
+import ShopIcon from "./ShopIcon";
 
 const Card = ({ details, handleTry }) => {
   // todo: update site image and site name
   const {
     title,
     price,
-    siteName,
     imgUrl,
-    siteImg,
     url,
     discount = "50",
-    isTryOn = false,
+    isTryOn = true,
+    store,
   } = details;
-  console.log({ card: details });
 
   return (
     <div
@@ -39,22 +38,11 @@ const Card = ({ details, handleTry }) => {
       >
         {discount}% OFF
       </div>
-
-      <div>
-        <a
-          href={url}
-          style={styles.siteLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={siteImg} alt={siteName} style={styles.siteImg} />
-          <p style={styles.siteName}>{siteName}</p>
-        </a>
-      </div>
+      <ShopIcon shopLink={url} style={styles.siteLink} shopName={store} />
       {isTryOn && (
         <button
           onClick={handleTry}
-          className="rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-4 py-2 font-normal text-sm"
+          className="rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-4 py-1 font-normal text-sm"
         >
           Try On
         </button>
