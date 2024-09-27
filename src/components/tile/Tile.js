@@ -18,14 +18,14 @@ const Tile = ({ data, isAnyTileHovered, setIsAnyTileHovered }) => {
       animate={
         !isAnyTileHovered
           ? {
-              y: [0, -100, 0], // Animation when no tile is hovered
+              y: [0, -500, 0], // Animation when no tile is hovered
             }
           : {
               y: 0, // Stop animation for all tiles when any one is hovered
             }
       }
       transition={{
-        duration: 10, // Duration of one full cycle of animation
+        duration: 20, // Duration of one full cycle of animation
         repeat: isAnyTileHovered ? 0 : Infinity, // Stop repeating when any tile is hovered
         repeatType: "mirror", // Animation reverses direction each cycle
       }}
@@ -33,7 +33,7 @@ const Tile = ({ data, isAnyTileHovered, setIsAnyTileHovered }) => {
       <img
         src={data.productImg}
         alt="product"
-        className={`w-full h-full object-cover rounded-lg transition-opacity duration-300 ${
+        className={`w-full h-full object-cover rounded-lg transition-opacity duration-300 object-top ${
           isHovered ? "opacity-50 blur-sm" : "opacity-100"
         }`}
       />
