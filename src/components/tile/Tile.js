@@ -1,15 +1,23 @@
 import { useState } from "react";
-
+import { motion } from "framer-motion";
 import arrow from "../../assets/arrow-up-right.svg";
 
 const Tile = ({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
+    <motion.div
       className="w-full h-full rounded-lg flex justify-center items-center shadow-lg border relative overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      animate={{
+        y: [0, -200, 0],
+      }}
+      transition={{
+        duration: 10,
+        repeat: Infinity,
+        repeatType: "mirror",
+      }}
     >
       <img
         src={data.productImg}
@@ -31,7 +39,7 @@ const Tile = ({ data }) => {
           />
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
