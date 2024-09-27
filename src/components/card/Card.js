@@ -2,7 +2,15 @@ import React from "react";
 
 const Card = ({ details, handleTry }) => {
   // todo: update site image and site name
-  const { title, price, siteName, imgUrl, siteImg, url, isTryOn = true, } = details;
+  const {
+    title,
+    price,
+    siteName,
+    imgUrl,
+    siteImg,
+    url,
+    isTryOn = true,
+  } = details;
   console.log({ card: details });
   return (
     <div
@@ -52,7 +60,6 @@ const styles = {
     margin: "8px",
     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
     textAlign: "center",
-    width: "250px",
   },
   name: {
     margin: "0 0 8px",
