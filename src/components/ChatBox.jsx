@@ -5,24 +5,48 @@ import classNames from "classnames";
 import { IconButton } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { List } from "./list/List";
-import { cardsArray } from "../constants/dummy-data";
+// import { cardsArray } from "../constants/dummy-data";
 import VideoList from "./videoList/VideoList";
+import { respData } from "../constants/responseData";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
-  const [messageList,setMessageList]= useState([]);
+  const [messageList, setMessageList] = useState([]);
 
+  const getData = async (text) => {
+    const url = `http://192.168.5.38:3000/api/v1/shopGPT?input=${encodeURIComponent(
+      text
+    )}`;
+    try {
+      // const resp = await fetch(url, {
+      //   method: "GET",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+      const resp = { ok: true, respData };
 
-  const onSubmit = (e)=>{
-    if(e.key==='Enter') {
-      setMessageList(curr=>[...curr,{
-        request: e.target.value,
-        response:{text: e.target.value + 'Response'}
-      }])
-      setText('')
-      setIsFocused(true)
+      if (resp.ok) {
+        // const data = await resp.json();
+        const data = respData;
+        setMessageList((curr) => [...curr, { request: text, response: data }]);
+      } else {
+        console.error(`Error: ${resp.status} ${resp.statusText}`);
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
     }
+  };
+
+  console.log({ messageList: messageList[0].response });
+
+  const onSubmit = (e) => {
+    if (e.key === "Enter") {
+      getData(e.target.value);
+      setText("");
+      setIsFocused(true);
     }
+  };
 
   return (
     <div
@@ -47,23 +71,30 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
         </IconButton>
       )}
 
-<div
-className={classNames(
-  "transition-all h-0 w-full duration-500 flex-grow overflow-auto flex flex-col gap-4",
-  {
-    "h-[80vh]": isFocused,
-  }
-)}
->
-
-      {messageList?.map(message=>(
-        <div>
-        {message?.request&&<div className="bg-white p-2 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto">{message?.request}</div>}
-        {message?.response?.text&&<div className="bg-yellow-200 p-2 rounded-[30px] flex items-center border border-border w-fit">{message?.response?.text}</div>}
-        {message?.VideoList&&<VideoList />}
-        {message?.productList&&<List cards={cardsArray} />}
-        </div>
-      ))}
+      <div
+        className={classNames(
+          "transition-all h-0 w-full duration-500 flex-grow overflow-auto flex flex-col gap-4",
+          {
+            "h-[80vh]": isFocused,
+          }
+        )}
+      >
+        {messageList?.map((message) => (
+          <div>
+            {message?.request && (
+              <div className="bg-white p-2 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto">
+                {message?.request}
+              </div>
+            )}
+            {message?.response?.text && (
+              <div className="bg-yellow-200 p-2 rounded-[30px] flex items-center border border-border w-fit">
+                {message?.response?.text}
+              </div>
+            )}
+            {message?.response?.videos && <VideoList />}
+            {message?.response?.products && <List cards={message?.response?.products} />}
+          </div>
+        ))}
       </div>
 
       <div className="bg-white p-2 w-full rounded-[30px] flex items-center border border-border">
@@ -80,8 +111,8 @@ className={classNames(
         <button
           onClick={onSubmit}
           className="hover:scale-110 transition-transform"
-          >
-            <SendIcon />
+        >
+          <SendIcon />
         </button>
       </div>
     </div>

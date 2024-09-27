@@ -1,7 +1,9 @@
 import React from "react";
 
 const Card = ({ details }) => {
-  const { name, price, siteName, productImg, siteImg, link } = details;
+  // todo: update site image and site name
+  const { title, price, siteName, imgUrl, siteImg, url } = details;
+  console.log({ card: details });
   return (
     <div
       className="card bg-[#F9F6FB] rounded-lg border-[1px] shadow-md border-black max-h-[300px] min-h-[300px] flex flex-col justify-between items-center"
@@ -9,17 +11,17 @@ const Card = ({ details }) => {
     >
       <div className="flex items-center flex-col">
         <img
-          src={productImg}
+          src={imgUrl}
           alt="product"
           className="flex justify-center items-center mb-4 w-[100px] h-[150px] object-cover rounded-lg"
         />
-        <h2 style={styles.name}>{name}</h2>
+        <h2 style={styles.name}>{title}</h2>
         <p style={styles.price}>Price: ${price}</p>
       </div>
 
       <div>
         <a
-          href={link}
+          href={url}
           style={styles.siteLink}
           target="_blank"
           rel="noopener noreferrer"
