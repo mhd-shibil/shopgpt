@@ -107,9 +107,9 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
 
       <div
         className={classNames(
-          "transition-all h-0 w-full duration-500 flex-grow overflow-auto flex flex-col gap-4 mt-8 px-4",
+          "transition-all h-0 w-full duration-500 flex-grow overflow-auto flex flex-col gap-4 px-4",
           {
-            "h-[75vh]": isFocused,
+            "h-[75vh] mt-8": isFocused,
           }
         )}
       >
