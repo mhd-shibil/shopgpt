@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { List } from "./components/list/List";
+import Loader from "./components/loader/Loader";
+import TopBar from "./components/top-bar/TopBar";
+import { cardsArray } from "./constants/dummy-data";
+
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TopBar />
+      <div className="h-[calc(100vh-200px)] mt-[201px]">
+        <Loader />
+        <List cards={cardsArray} />
+      </div>
     </div>
   );
 }
