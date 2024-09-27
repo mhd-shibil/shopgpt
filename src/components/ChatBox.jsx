@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ReactComponent as AttatchmentIcon } from "../assets/attachment.svg";
 import { ReactComponent as SendIcon } from "../assets/send.svg";
@@ -7,14 +7,17 @@ import { IconButton } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { List } from "./list/List";
 import VideoList from "./videoList/VideoList";
-import { respData } from "../constants/responseData";
 import VoiceRecorder from "../components/voice/voiceRecorder";
+import Loader from "../components/loader/Loader";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
   const [messageList, setMessageList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [lastMessage, setLastMessage] = useState("");
 
   const getData = async (text) => {
+    setIsLoading(true);
     const url = `https://9128-103-138-236-18.ngrok-free.app/api/v1/shopGPT?input=${encodeURIComponent(
       text
     )}`;
@@ -42,11 +45,13 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
     } catch (error) {
       console.error("Fetch error:", error);
     }
+    setIsLoading(false);
   };
 
   const onSubmit = (value) => {
     getData(value);
     setText("");
+    setLastMessage(value);
     setIsFocused(true);
   };
 
@@ -115,6 +120,16 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
             )}
           </div>
         ))}
+        {isLoading && (
+          <div>
+            {lastMessage && (
+              <div className="bg-[#DCD3E9] py-1 px-[20px] rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto text-[14px] font-bold">
+                {lastMessage}
+              </div>
+            )}
+            <Loader />
+          </div>
+        )}
       </div>
 
       <div className="bg-white p-2 w-full rounded-[30px] flex items-center border border-border">
