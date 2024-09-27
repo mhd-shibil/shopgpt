@@ -16,7 +16,7 @@ export const cardsArray = [
     name: "The Majesta Watch Band",
     price: "₹1,23,953",
     siteName: "Bluestone",
-    productImg: "https://kinclimg5.bluestone.com/f_webp/static/hp/d/e19_v2.jpg",
+    productImg: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1713943206_9376927.png?format=webp&w=480&dpr=1.0",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.amazon.com",
@@ -41,7 +41,7 @@ export const cardsArray = [
     price: "₹985",
     siteName: "Claura",
     productImg:
-      "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/30207959/2024/JULY/13/u17rJc9C_abeb91947fd047d7b74525207b455661.jpg",
+      "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1674050737/Croma%20Assets/Communication/Headphones%20and%20Earphones/Images/232147_0_pqjtt7.png?tr=w-600",
     siteImg:
       "https://i.pinimg.com/564x/bd/b6/3d/bdb63d19a254526cb7f4b0a665296f81.jpg",
     link: "https://www.myntra.com/dresses/claura/claura-women-floral-print-mandarin-collar-short-sleeves-fit-and-flare-midi-dress/30207959/buy",
