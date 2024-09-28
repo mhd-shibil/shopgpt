@@ -32,7 +32,6 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
       if (text.includes("iphone")) {
         videoList = iphoneVideoData;
       }
-      console.log("videoList", videoList);
       setMessageList((curr) => [
         ...curr,
         { request: text, response: { videos: videoList }, id: uuidv4() },
@@ -71,7 +70,11 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
         } else {
           setMessageList((curr) => [
             ...curr,
-            { request: text, response: data, id: uuidv4() },
+            {
+              request: text,
+              response: data,
+              id: uuidv4(),
+            },
           ]);
         }
       } else {
@@ -173,47 +176,53 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           }
         )}
       >
-        {messageList?.map((message, index) => (
-          <div key={message.id} className="mb-4">
-            {message?.request && (
-              <div className="bg-[#F5F5F5] py-1 px-6 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto font-bold text-base">
-                {message?.request}
-              </div>
-            )}
-            <div className="flex" id={message.id}>
-              <div className="bg-gradient-to-br from-[#C167F6] to-[#5548C7] size-11 flex items-center justify-center rounded-md mr-10">
-                <ResponseIcon />
-              </div>
-              <div>
-                {message?.response?.text && (
-                  <div className="p-2 rounded-[30px] flex items-center w-fit  font-bold">
-                    {message?.response?.text}
+        <div className="flex flex-col justify-between h-full ">
+          <div>
+            {messageList?.map((message, index) => (
+              <div key={message.id} className="mb-4">
+                {message?.request && (
+                  <div className="bg-[#F5F5F5] py-1 px-6 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto font-bold text-base">
+                    {message?.request}
                   </div>
                 )}
-                {message?.response?.videos && (
-                  <VideoList
-                    videos={message?.response?.videos}
-                    autoPlay={index + 1 === messageList.length}
-                  />
-                )}
-                {message?.response?.products && (
-                  <List
-                    cards={message?.response?.products}
-                    handleTry={handleTry}
-                  />
-                )}
+                <div className="flex" id={message.id}>
+                  <div className="bg-gradient-to-br from-[#C167F6] to-[#5548C7] size-11 flex items-center justify-center rounded-md mr-10">
+                    <ResponseIcon />
+                  </div>
+                  <div>
+                    {message?.response?.text && (
+                      <div className="p-2 rounded-[30px] flex items-center w-fit  font-bold">
+                        {message?.response?.text}
+                      </div>
+                    )}
+                    {message?.response?.videos && (
+                      <VideoList
+                        videos={message?.response?.videos}
+                        autoPlay={index + 1 === messageList.length}
+                      />
+                    )}
+                    {message?.response?.products && (
+                      <List
+                        cards={message?.response?.products}
+                        handleTry={handleTry}
+                      />
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-        {messageList.length >= 1 && !isLoading && (
-          <FollowUp
-            onClick={handleFollowUpClick}
-            questions={
-              messageList[messageList.length - 1].response?.followUpQns
-            }
-          />
-        )}
+
+          {messageList.length >= 1 && !isLoading && (
+            <FollowUp
+              onClick={handleFollowUpClick}
+              questions={
+                messageList[messageList.length - 1].response?.followUpQns
+              }
+            />
+          )}
+        </div>
+
         {isLoading && (
           <div id="loader">
             {lastMessage && (
