@@ -4,7 +4,7 @@ import { ReactComponent as AttatchmentIcon } from "../assets/attachment.svg";
 import { ReactComponent as SendIcon } from "../assets/send.svg";
 import { ReactComponent as ResponseIcon } from "../assets/response.svg";
 import classNames from "classnames";
-import { IconButton } from "@mui/material";
+import { IconButton, Modal } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { List } from "./list/List";
 import VideoList from "./videoList/VideoList";
@@ -13,6 +13,7 @@ import Loader from "../components/loader/Loader";
 import FollowUp from "./follow-up/FollowUp";
 import { respData } from "../constants/responseData";
 import { iphoneVideoData } from "../constants/videoData";
+import { TryOn } from "./TryOn";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
@@ -20,6 +21,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [lastMessage, setLastMessage] = useState("");
   const [userId,setUserId] = useState("");
+  const [tryOnDress,setTryOnDress] = useState('');
 
   const getData = async (text) => {
     let currentUserId = userId
@@ -98,7 +100,8 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
     setIsFocused(true);
   };
 
-  const handleTry = () => {
+  const handleTry = (url) => {
+    setTryOnDress(url)
     console.log("Trying on...");
   };
 
@@ -129,6 +132,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
   }, [isLoading]);
 
   return (
+    <>
     <div
       className={classNames(
         "p-6 fixed bottom-10 left-60 right-60 bg-background rounded-xl shadow-[0px_0px_100px_5px_#0000001A] border border-[#9747FF] flex flex-col justify-end z-20",
@@ -243,5 +247,9 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
         </button>
       </div>
     </div>
+    <Modal open={!!tryOnDress} onClose={()=>setTryOnDress('')}>
+      <TryOn tryOnDress={tryOnDress}/>
+      </Modal>
+    </>
   );
 };
