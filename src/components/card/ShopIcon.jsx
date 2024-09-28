@@ -5,22 +5,22 @@ import { ReactComponent as FlipkartIcon } from "../../assets/shopIcons/flipkart.
 import { ReactComponent as AppleIcon } from "../../assets/shopIcons/apple.svg";
 
 const ShopIcon = ({ shopLink, shopName, style }) => {
+  const getStyle = () => {
+    if (shopName === "Croma") return "w-20 h-8";
+    return "size-8";
+  };
+
   const getShopIcon = () => {
-    if (shopName === "Amazon.in") return <AmazonIcon />;
-    if (shopName === "Croma") return <CromaIcon />;
-    if (shopName === "Flipkart") return <FlipkartIcon />;
-    if (shopName === "Apple") return <AppleIcon />;
+    if (shopName === "Amazon.in") return <AmazonIcon className={getStyle()} />;
+    if (shopName === "Croma") return <CromaIcon className={getStyle()} />;
+    if (shopName === "Flipkart") return <FlipkartIcon className={getStyle()} />;
+    if (shopName === "Apple") return <AppleIcon className={getStyle()} />;
     return null;
   };
 
   const getShopName = () => {
     if (shopName === "Amazon.in") return "Amazon";
     return shopName;
-  };
-
-  const getStyle = () => {
-    if (shopName === "Croma") return "w-20 h-8";
-    return "size-8";
   };
 
   return (
