@@ -114,8 +114,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
   };
 
   const handleTry = (url) => {
-    setTryOnDress(url);
-    console.log("Trying on...");
+    setTryOnDress(url)
   };
 
   const handleFollowUpClick = (value) => {
