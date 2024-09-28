@@ -6,7 +6,7 @@ const Card = ({ details, handleTry }) => {
 
   return (
     <div
-      className={`card bg-[#F9F6FB] rounded-lg border-[1px] shadow-md border-black flex flex-col justify-between items-center pb-4 ${
+      className={`card bg-[#F9F6FB] rounded-lg border-[1px] shadow-md border-black flex flex-col justify-between items-center pb-4 cursor-pointer ${
         type === "Fashion" ? "h-full min-h-[340px]" : "h-full min-h-[300px]"
       }`}
       style={styles.card}
