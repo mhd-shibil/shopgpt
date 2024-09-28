@@ -1,4 +1,4 @@
-import { ReactComponent as ArrowIcon } from "../../assets/arrow-primary.svg";
+import { ReactComponent as ArrowIcon } from "../../assets/send.svg";
 
 const FollowUp = ({ questions, onClick }) => {
   return (
@@ -8,10 +8,10 @@ const FollowUp = ({ questions, onClick }) => {
           role="presentation"
           onClick={() => onClick(followUp)}
           key={index}
-          className="cursor-pointer bg-[#f0f0f0] py-2 px-[30px] rounded-[30px] flex items-center border-[2px] border-[#5548C7] mb-2 w-fit text-[14px] font-bold gap-4"
+          className="cursor-pointer bg-[#f0f0f0] py-1 px-[30px] rounded-[30px] flex items-center border-[2px] border-[#5548C7] mb-2 w-fit text-sm font-semibold gap-4"
         >
           {followUp}
-          <ArrowIcon className="rotate-45 min-w-6 max-w-6" />
+          {/* <ArrowIcon className="rotate-45 min-w-6 max-w-6" /> */}
         </div>
       ))}
     </div>
