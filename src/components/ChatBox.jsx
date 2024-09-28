@@ -276,7 +276,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           border: "none",
         }}
       >
-        <div style={{ width: "70%", height: "50%", position: "relative" }}>
+        <div style={{ width: "80%", height: "70%", position: "relative" }}>
           <IconButton
             onClick={() => setTryOnDress("")}
             sx={{

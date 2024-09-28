@@ -40,7 +40,7 @@ export const TryOn = ({tryOnDress}) => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
-    <div className='bg-[#F9F6FB] p-20 rounded-xl grid grid-cols-3 gap-8  h-[100vh] '>
+    <div className='bg-[#F9F6FB] p-20 rounded-xl grid grid-cols-3 gap-8 h-full'>
       <img className='w-full h-full object-cover rounded-3xl overflow-hidden' src={tryOnDress} alt=""/>
       
       <div
@@ -55,7 +55,7 @@ export const TryOn = ({tryOnDress}) => {
             <p>Drop the image here ...</p>
           ) : (<div className='flex items-center justify-center flex-col gap-10'>
           <UploadIcon/>
-            <p className='text-[20px] text-[rgba(126,116,212,1)] font-bold'>Drop an image here, or click to select one</p>
+            <p className='text-[20px] text-[rgba(126,116,212,1)] font-bold text-center p-4'>Drop an image here, or click to select one</p>
             </div>
         )}
       </>}

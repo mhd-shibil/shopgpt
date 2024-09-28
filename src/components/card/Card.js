@@ -30,12 +30,15 @@ const Card = ({ details, handleTry }) => {
       <div className="w-full items-center justify-center">
         <ShopIcon shopLink={url} style={styles.siteLink} shopName={store} />
         {type === "Fashion" && (
-          <button
-            onClick={() => handleTry(imgUrl)}
-            className="mt-2 rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-8 py-1 font-normal text-sm"
-          >
-            Try On
-          </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleTry(imgUrl);
+          }}
+          className="mt-2 rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-8 py-1 font-normal text-sm"
+        >
+          Try On
+        </button>
         )}
       </div>
 
