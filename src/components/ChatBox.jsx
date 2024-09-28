@@ -13,6 +13,7 @@ import Loader from "../components/loader/Loader";
 import FollowUp from "./follow-up/FollowUp";
 import { iphoneVideoData } from "../constants/videoData";
 import { TryOn } from "./TryOn";
+// import { respData } from "../constants/responseData";
 
 export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [text, setText] = useState("");
@@ -92,6 +93,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
         console.error(`Error: ${resp.status} ${resp.statusText}`);
       }
     } catch (error) {
+      setIsLoading(false);
       setMessageList((curr) => [
         ...curr,
         {
