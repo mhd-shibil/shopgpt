@@ -1,4 +1,6 @@
 export const respData = {
+  followUpQns: ["question 1", "Question2"],
+
   products: [
     {
       url: "https://www.google.com/url?url=https://www.amazon.in/LIRAMARK-Liquid-Silicone-Cover-iPhone/dp/B0DG2BGCRX%3Fsource%3Dps-sl-shoppingads-lpcontext%26ref_%3Dfplfs%26psc%3D1%26smid%3DA1WYWER0W24N8S&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjFto-IxeOIAxX2TGwGHakeHZsQgOUECKYQ&usg=AOvVaw2PqDINgwcBMjvtRBFk4BWZ",

@@ -24,9 +24,9 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [tryOnDress,setTryOnDress] = useState('');
 
   const getData = async (text) => {
-    let currentUserId = userId
-    if(!currentUserId){
-      currentUserId=uuidv4();
+    let currentUserId = userId;
+    if (!currentUserId) {
+      currentUserId = uuidv4();
       setUserId(currentUserId);
     }
     if (text.includes("review")) {
@@ -34,7 +34,6 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
       if (text.includes("iphone")) {
         videoList = iphoneVideoData;
       }
-      console.log("videoList", videoList);
       setMessageList((curr) => [
         ...curr,
         { request: text, response: { videos: videoList }, id: uuidv4() },
@@ -54,43 +53,58 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
         },
       });
       // const resp = { ok: true, respData };
+      setIsLoading(false);
 
       if (resp.ok) {
         const data = await resp.json();
         // const data = respData;
-        if(!data?.text&&!data?.products?.length&&!data?.videos?.length){
-
-        setMessageList((curr) => [
-          ...curr,
-          { request: text, response: {
-            text: "Sorry, I am not able to fetch the data right now. Please try again later.",
-          }, id: uuidv4() },
-        ]);
-      }else{
-        setMessageList((curr) => [
-          ...curr,
-          { request: text, response: data, id: uuidv4() },
-        ]);}
+        if (!data?.text && !data?.products?.length && !data?.videos?.length) {
+          setMessageList((curr) => [
+            ...curr,
+            {
+              request: text,
+              response: {
+                text: "Sorry, I am not able to fetch the data right now. Please try again later.",
+              },
+              id: uuidv4(),
+            },
+          ]);
+        } else {
+          setMessageList((curr) => [
+            ...curr,
+            {
+              request: text,
+              response: data,
+              id: uuidv4(),
+            },
+          ]);
+        }
       } else {
         setMessageList((curr) => [
           ...curr,
-          { request: text, response: {
-            text: "Sorry, I am not able to fetch the data right now. Please try again later.",
-          }, id: uuidv4() },
+          {
+            request: text,
+            response: {
+              text: "Sorry, I am not able to fetch the data right now. Please try again later.",
+            },
+            id: uuidv4(),
+          },
         ]);
         console.error(`Error: ${resp.status} ${resp.statusText}`);
       }
     } catch (error) {
-
       setMessageList((curr) => [
         ...curr,
-        { request: text, response: {
-          text: "Sorry, I am not able to fetch the data right now. Please try again later.",
-        }, id: uuidv4() },
+        {
+          request: text,
+          response: {
+            text: "Sorry, I am not able to fetch the data right now. Please try again later.",
+          },
+          id: uuidv4(),
+        },
       ]);
       console.error("Fetch error:", error);
     }
-    setIsLoading(false);
   };
 
   const onSubmit = (value) => {
@@ -150,8 +164,9 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
             zIndex: 10,
           }}
           onClick={() => {
-            setUserId('');
-            setIsFocused(false)}}
+            setUserId("");
+            setIsFocused(false);
+          }}
         >
           <Close />
         </IconButton>
@@ -165,47 +180,53 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
           }
         )}
       >
-        {messageList?.map((message, index) => (
-          <div key={message.id} className="mb-4">
-            {message?.request && (
-              <div className="bg-[#F5F5F5] py-1 px-6 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto font-bold text-base">
-                {message?.request}
-              </div>
-            )}
-            <div className="flex" id={message.id}>
-              <div className="bg-gradient-to-br from-[#C167F6] to-[#5548C7] size-11 flex items-center justify-center rounded-md mr-10">
-                <ResponseIcon/>
-              </div>
-              <div>
-              {message?.response?.text && (
-                <div className="p-2 rounded-[30px] flex items-center w-fit  font-bold">
-                  {message?.response?.text}
+        <div className="flex flex-col justify-between h-full ">
+          <div>
+            {messageList?.map((message, index) => (
+              <div key={message.id} className="mb-4">
+                {message?.request && (
+                  <div className="bg-[#F5F5F5] py-1 px-6 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto font-bold text-base">
+                    {message?.request}
+                  </div>
+                )}
+                <div className="flex" id={message.id}>
+                  <div className="bg-gradient-to-br from-[#C167F6] to-[#5548C7] size-11 flex items-center justify-center rounded-md mr-10">
+                    <ResponseIcon />
+                  </div>
+                  <div>
+                    {message?.response?.text && (
+                      <div className="p-2 rounded-[30px] flex items-center w-fit  font-bold">
+                        {message?.response?.text}
+                      </div>
+                    )}
+                    {message?.response?.videos && (
+                      <VideoList
+                        videos={message?.response?.videos}
+                        autoPlay={index + 1 === messageList.length}
+                      />
+                    )}
+                    {message?.response?.products && (
+                      <List
+                        cards={message?.response?.products}
+                        handleTry={handleTry}
+                      />
+                    )}
+                  </div>
                 </div>
-              )}
-              {message?.response?.videos && (
-                <VideoList
-                  videos={message?.response?.videos}
-                  autoPlay={index + 1 === messageList.length}
-                />
-              )}
-              {message?.response?.products && (
-                <List
-                  cards={message?.response?.products}
-                  handleTry={handleTry}
-                />
-              )}
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-        {messageList.length >= 1 && !isLoading && (
-          <FollowUp
-            onClick={handleFollowUpClick}
-            questions={
-              messageList[messageList.length - 1].response?.followUpQns
-            }
-          />
-        )}
+
+          {messageList.length >= 1 && !isLoading && (
+            <FollowUp
+              onClick={handleFollowUpClick}
+              questions={
+                messageList[messageList.length - 1].response?.followUpQns
+              }
+            />
+          )}
+        </div>
+
         {isLoading && (
           <div id="loader">
             {lastMessage && (
