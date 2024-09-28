@@ -19,6 +19,8 @@ const Card = ({ details, handleTry }) => {
         isTryOn ? "h-full min-h-[340px]" : "h-full min-h-[300px]"
       }`}
       style={styles.card}
+      role="presentation"
+      onClick={window.open(url, "_blank")}
     >
       <div className="flex items-start text-start flex-col w-full">
         <img
@@ -26,7 +28,9 @@ const Card = ({ details, handleTry }) => {
           alt="product"
           className="flex justify-center items-center mb-4 w-full h-[180px] object-cover object-top rounded-lg"
         />
-        <div className="text-[#303030] font-medium text-sm mx-2 ellipsis-2-lines">{title}</div>
+        <div className="text-[#303030] font-medium text-sm mx-2 ellipsis-2-lines">
+          {title}
+        </div>
         <div className="text-[#303030] font-bold text-sm mx-2 mt-1">
           {price}
         </div>
@@ -36,7 +40,7 @@ const Card = ({ details, handleTry }) => {
         <ShopIcon shopLink={url} style={styles.siteLink} shopName={store} />
         {isTryOn && (
           <button
-            onClick={()=>handleTry(imgUrl)}
+            onClick={() => handleTry(imgUrl)}
             className="mt-2 rounded-full bg-gradient-to-bl from-[#C167F6] to-[#5548C7] text-white px-8 py-1 font-normal text-sm"
           >
             Try On

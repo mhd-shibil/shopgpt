@@ -25,15 +25,7 @@ const ShopIcon = ({ shopLink, shopName, style }) => {
 
   return (
     <div className="mb-1 ml-2 flex gap-2 items-center">
-      <a
-        href={shopLink}
-        style={style}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={getStyle()}
-      >
-        {getShopIcon()}
-      </a>
+      <div className={getStyle()}>{getShopIcon()}</div>
       <div className="text-sm font-semibold">{getShopName()}</div>
     </div>
   );
