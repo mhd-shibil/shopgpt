@@ -11,7 +11,6 @@ import VideoList from "./videoList/VideoList";
 import VoiceRecorder from "../components/voice/voiceRecorder";
 import Loader from "../components/loader/Loader";
 import FollowUp from "./follow-up/FollowUp";
-import { respData } from "../constants/responseData";
 import { iphoneVideoData } from "../constants/videoData";
 import { TryOn } from "./TryOn";
 
@@ -20,8 +19,8 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
   const [messageList, setMessageList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [lastMessage, setLastMessage] = useState("");
-  const [userId,setUserId] = useState("");
-  const [tryOnDress,setTryOnDress] = useState('');
+  const [userId, setUserId] = useState("");
+  const [tryOnDress, setTryOnDress] = useState("");
 
   const getData = async (text) => {
     let currentUserId = userId;
@@ -115,7 +114,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
   };
 
   const handleTry = (url) => {
-    setTryOnDress(url)
+    setTryOnDress(url);
     console.log("Trying on...");
   };
 
@@ -147,129 +146,154 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
 
   return (
     <>
-    <div
-      className={classNames(
-        "p-6 fixed bottom-10 left-60 right-60 bg-background rounded-xl shadow-[0px_0px_100px_5px_#0000001A] border border-[#9747FF] flex flex-col justify-end z-20",
-        {
-          "bg-[#EEE8F5] pt-8": isFocused,
-        }
-      )}
-    >
-      {isFocused && (
-        <IconButton
-          sx={{
-            position: "absolute",
-            right: "5px",
-            top: "5px",
-            zIndex: 10,
-          }}
-          onClick={() => {
-            setUserId("");
-            setIsFocused(false);
-          }}
-        >
-          <Close />
-        </IconButton>
-      )}
-
       <div
         className={classNames(
-          "transition-all h-0 w-full duration-500 flex-grow overflow-auto flex flex-col gap-4 px-4",
+          "p-6 fixed bottom-10 left-60 right-60 bg-background rounded-xl shadow-[0px_0px_100px_5px_#0000001A] border border-[#9747FF] flex flex-col justify-end z-20",
           {
-            "h-[75vh] mt-8": isFocused,
+            "bg-[#EEE8F5] pt-8": isFocused,
           }
         )}
       >
-        <div className="flex flex-col justify-between h-full ">
-          <div>
-            {messageList?.map((message, index) => (
-              <div key={message.id} className="mb-4">
-                {message?.request && (
-                  <div className="bg-[#F5F5F5] py-1 px-6 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto font-bold text-base">
-                    {message?.request}
-                  </div>
-                )}
-                <div className="flex" id={message.id}>
-                  <div className="bg-gradient-to-br from-[#C167F6] to-[#5548C7] size-11 flex items-center justify-center rounded-md mr-10">
-                    <ResponseIcon />
-                  </div>
-                  <div>
-                    {message?.response?.text && (
-                      <div className="p-2 rounded-[30px] flex items-center w-fit  font-bold">
-                        {message?.response?.text}
-                      </div>
-                    )}
-                    {message?.response?.videos && (
-                      <VideoList
-                        videos={message?.response?.videos}
-                        autoPlay={index + 1 === messageList.length}
-                      />
-                    )}
-                    {message?.response?.products && (
-                      <List
-                        cards={message?.response?.products}
-                        handleTry={handleTry}
-                      />
-                    )}
+        {isFocused && (
+          <IconButton
+            sx={{
+              position: "absolute",
+              right: "5px",
+              top: "5px",
+              zIndex: 10,
+            }}
+            onClick={() => {
+              setUserId("");
+              setIsFocused(false);
+            }}
+          >
+            <Close />
+          </IconButton>
+        )}
+
+        <div
+          className={classNames(
+            "transition-all h-0 w-full duration-500 flex-grow overflow-auto flex flex-col gap-4 px-4",
+            {
+              "h-[75vh] mt-8": isFocused,
+            }
+          )}
+        >
+          <div className="flex flex-col justify-between h-full ">
+            <div>
+              {messageList?.map((message, index) => (
+                <div key={message.id} className="mb-4">
+                  {message?.request && (
+                    <div className="bg-[#F5F5F5] py-1 px-6 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto font-bold text-base">
+                      {message?.request}
+                    </div>
+                  )}
+                  <div className="flex" id={message.id}>
+                    <div className="bg-gradient-to-br from-[#C167F6] to-[#5548C7] size-11 flex items-center justify-center rounded-md mr-10">
+                      <ResponseIcon />
+                    </div>
+                    <div>
+                      {message?.response?.text && (
+                        <div className="p-2 rounded-[30px] flex items-center w-fit  font-bold">
+                          {message?.response?.text}
+                        </div>
+                      )}
+                      {message?.response?.videos && (
+                        <VideoList
+                          videos={message?.response?.videos}
+                          autoPlay={index + 1 === messageList.length}
+                        />
+                      )}
+                      {message?.response?.products && (
+                        <List
+                          cards={message?.response?.products}
+                          handleTry={handleTry}
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {messageList.length >= 1 && !isLoading && (
+              <FollowUp
+                onClick={handleFollowUpClick}
+                questions={
+                  messageList[messageList.length - 1].response?.followUpQns
+                }
+              />
+            )}
           </div>
 
-          {messageList.length >= 1 && !isLoading && (
-            <FollowUp
-              onClick={handleFollowUpClick}
-              questions={
-                messageList[messageList.length - 1].response?.followUpQns
-              }
-            />
+          {isLoading && (
+            <div id="loader">
+              {lastMessage && (
+                <div className="bg-[#F5F5F5] py-1 px-6 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto font-bold text-base">
+                  {lastMessage}
+                </div>
+              )}
+              <Loader />
+            </div>
           )}
         </div>
 
-        {isLoading && (
-          <div id="loader">
-            {lastMessage && (
-              <div className="bg-[#F5F5F5] py-1 px-6 rounded-[30px] flex items-center border border-border mb-2 w-fit ml-auto font-bold text-base">
-                {lastMessage}
-              </div>
-            )}
-            <Loader />
+        <div className="bg-white p-2 w-full rounded-[30px] flex items-center border border-border">
+          <div className="p-1 bg-[#5548C7] rounded-full size-11">
+            <AttatchmentIcon />
           </div>
-        )}
-      </div>
-
-      <div className="bg-white p-2 w-full rounded-[30px] flex items-center border border-border">
-        <div className="p-1 bg-[#5548C7] rounded-full size-11">
-          <AttatchmentIcon />
+          <input
+            onChange={(e) => setText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") onSubmit(e.target.value);
+            }}
+            value={text}
+            placeholder="Start typing here..."
+            className="w-full h-full ml-4 outline-none text-lg font-medium"
+          />
+          <VoiceRecorder
+            setText={(text) => {
+              setText(text);
+              setTimeout(() => {
+                onSubmit(text);
+              }, 500);
+            }}
+          />
+          <button
+            onClick={() => onSubmit(text)}
+            className="hover:scale-110 transition-transform"
+          >
+            <SendIcon />
+          </button>
         </div>
-        <input
-          onChange={(e) => setText(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") onSubmit(e.target.value);
-          }}
-          value={text}
-          placeholder="Start typing here..."
-          className="w-full h-full ml-4 outline-none text-lg font-medium"
-        />
-        <VoiceRecorder
-          setText={(text) => {
-            setText(text);
-            setTimeout(() => {
-              onSubmit(text);
-            }, 500);
-          }}
-        />
-        <button
-          onClick={() => onSubmit(text)}
-          className="hover:scale-110 transition-transform"
-        >
-          <SendIcon />
-        </button>
       </div>
-    </div>
-    <Modal open={!!tryOnDress} onClose={()=>setTryOnDress('')}>
-      <TryOn tryOnDress={tryOnDress}/>
+      <Modal
+        open={!!tryOnDress}
+        onClose={() => setTryOnDress("")}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          border: "none",
+        }}
+      >
+        <div style={{ width: "70%", height: "50%", position: "relative" }}>
+          <IconButton
+            onClick={() => setTryOnDress("")}
+            sx={{
+              position: "absolute",
+              top: 8,
+              right: 8,
+              backgroundColor: "rgba(255, 255, 255, 0.8)",
+              "&:hover": {
+                backgroundColor: "rgba(255, 255, 255, 1)",
+              },
+            }}
+          >
+            <Close />
+          </IconButton>
+          <TryOn tryOnDress={tryOnDress} />
+        </div>
       </Modal>
     </>
   );
