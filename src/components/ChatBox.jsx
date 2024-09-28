@@ -163,6 +163,7 @@ export const ChatBox = ({ isFocused, setIsFocused }) => {
             }}
             onClick={() => {
               setUserId("");
+              setMessageList([])
               setIsFocused(false);
             }}
           >
