@@ -11,7 +11,7 @@ const Card = ({ details, handleTry }) => {
       }`}
       style={styles.card}
       role="presentation"
-      onClick={window.open(url, "_blank")}
+      onClick={() => window.open(url, "_blank")}
     >
       <div className="flex items-start text-start flex-col w-full">
         <img
